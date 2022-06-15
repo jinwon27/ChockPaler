@@ -14,10 +14,7 @@ public class HomeController {
 	@RequestMapping("/home")
 	public String home(HttpServletRequest request) {
 		
-		List<String> list=new ArrayList<String>();
-		list.add("촠팔러");
 		
-		request.setAttribute("list", list);
 		
 		return "home";
 	}
