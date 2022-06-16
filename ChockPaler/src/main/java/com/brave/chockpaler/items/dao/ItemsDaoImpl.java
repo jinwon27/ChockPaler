@@ -1,5 +1,5 @@
 package com.brave.chockpaler.items.dao;
 
-public enum ItemsDaoImpl {
+public class ItemsDaoImpl {
 
 }
