@@ -16,7 +16,7 @@ public interface ItemsDao {
 	
 	public ItemsDto getData(int num);
 	
-	public ItemsDto SalCount(int num);
+	public ItemsDto BSCount(int num);
 	
 	
 	
