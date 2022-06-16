@@ -1,5 +1,5 @@
 package com.brave.chockpaler.userorder.service;
 
-public class UsersOrderServiceImpl {
+public interface UserOrderService {
 
 }
