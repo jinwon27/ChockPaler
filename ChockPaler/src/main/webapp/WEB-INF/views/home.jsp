@@ -16,7 +16,7 @@
 	<a href="${pageContext.request.contextPath }/views/shop/orderinquiry.do">주문배송조회</a>
 	<br />
 	<div class="container">
-		<form action="/searchItems.do">
+		<form action="${pageContext.request.contextPath }/views/items/searchItems.do">
 			<input type="text" placeholder="검색어 입력..."/>
 			<button type="submit">검색</button>
 		</form>
