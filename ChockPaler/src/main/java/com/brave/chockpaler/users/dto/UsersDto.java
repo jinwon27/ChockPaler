@@ -10,6 +10,7 @@ public class UsersDto {
 	private String regdate;
 	private String gender;
 	
+
 	public UsersDto() {}
 
 	public UsersDto(int num, String id, String pwd, String name, String email, String profile, String regdate,
@@ -90,5 +91,6 @@ public class UsersDto {
 	}
 
 	
+
 	
 }
