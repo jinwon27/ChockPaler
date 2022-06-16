@@ -11,7 +11,7 @@ public class ItemsDto {
 	private String updateDate;
 	private String img;
 	private int RemainCount;
-	private String acron;
+	
 	
 	public ItemsDto() {}
 
