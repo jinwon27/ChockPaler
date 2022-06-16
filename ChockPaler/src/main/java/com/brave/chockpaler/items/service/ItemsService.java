@@ -10,7 +10,7 @@ public interface ItemsService {
 	//아이템 목록 얻어오기
 	public void getList(HttpServletRequest request);
 	//업로드된 아이템 저장하기
-	public void saveItems(ItemsDto dto, ModelAndView mView );
+	public void saveItems(ItemsDto dto, ModelAndView mView, HttpServletRequest request );
 	//아이템 하나의 정보 얻어오기
 	public void getItemsData(int num, ModelAndView mView);
 	//아이템 삭제하기
