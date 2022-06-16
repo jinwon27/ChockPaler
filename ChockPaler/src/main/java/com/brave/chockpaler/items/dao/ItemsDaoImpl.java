@@ -20,31 +20,31 @@ public class ItemsDaoImpl implements ItemsDao {
 
 	@Override
 	public void insert(ItemsDto dto) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public void delete(int num) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public void update(ItemsDto dto) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public ItemsDto getData(int num) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public ItemsDto SalCount(int num) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
