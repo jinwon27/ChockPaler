@@ -45,3 +45,15 @@ item VARCHAR2(100),
 count NUMBER,
 price NUMBER
 );
+
+CREATE TABLE ITEMS(
+item_type VARCHAR2(50),
+item_num NUMBER PRIMARY KEY,
+name VARCHAR2(100),
+detail VARCHAR2(300),
+price NUMBER,
+star_point NUMBER,
+regdate DATE,
+img VARCHAR2(300),
+remain_count NUMBER CHECK(remain_count >= 0)
+);
