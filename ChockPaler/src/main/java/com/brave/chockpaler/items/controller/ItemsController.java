@@ -23,8 +23,6 @@ public class ItemsController {
 	public String upload(@RequestParam ItemsDto dto) {
 		// 폼으로 전송된 데이터를 디비에 인설트(저장) 하기
 		service.saveItems(dto);
-		return "upload.jsp";
+		return "items/upload.jsp";
 	}
-	
-	
 }

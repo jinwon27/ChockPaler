@@ -10,17 +10,21 @@
 <body>
 	<div class="container">
 		<form action="${pageContext.request.contextPath }/views/items/upload.do">
-			<label for="younghwa">타입</label>
-			<input type="text" id="younghwa" name="type"/>
+			<label for="type">타입</label>
+			<select name="type" id="type">
+				<option value="">선택</option>
+				<option value="cookie">쿠키</option>
+				<option value="beverage">음료</option>
+			</select>
 			<br />
-			<label for="younghwa2">상품명</label>
-			<input type="text" id="younghwa2" name="name"/>
+			<label for="name">상품명</label>
+			<input type="text" id="name" name="name"/>
 			<br />
-			<label for="">상세정보</label>
-			<textarea name="detail" id=""></textarea>
+			<label for="detail">상세정보</label>
+			<textarea name="detail" id="detail"></textarea>
 			<br />
-			<label for="">price</label>
-			<input type="text" id="" name="price" />
+			<label for="price">price</label>
+			<input type="text" id="price" name="price" /> 원
 			<br />
 			<label for="">이미지</label>
 			<!-- image 첨부하는 요소 -->

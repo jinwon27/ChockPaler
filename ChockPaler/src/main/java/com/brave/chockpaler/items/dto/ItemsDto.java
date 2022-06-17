@@ -2,15 +2,15 @@ package com.brave.chockpaler.items.dto;
 
 public class ItemsDto {
 	
-	private String itemType;
-	private int num;
-	private String name;
-	private String detail;
-	private int price;
-	private int starPoint;
-	private String regdate;
-	private String img;
-	private int remainCount; // JAEGO
+	private String itemType; //cookie or 멀라 ㅠ
+	private int num; // seq.NEXTVAL
+	private String name; // 상품 이름
+	private String detail; // 상품 설면
+	private int price; // 가격 설정
+	private int starPoint; 
+	private String regdate; 
+	private String img; // 이미지 링크 등록
+	private int remainCount; // 재고는 처음에 설정해줘야댐 몇개 있는지
 	
 	public ItemsDto() {}
 	

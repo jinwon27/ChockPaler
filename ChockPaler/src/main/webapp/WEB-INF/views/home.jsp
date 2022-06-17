@@ -47,7 +47,7 @@
 			<tbody>
 			<!-- 반복문 돌릴 구간 -->
 				<tr>
-					<td>${requestScope.itemDto.name }</td>
+					<td></td>
 					<td>${requestScope.itemDto.content }</td>
 				</tr>
 			<!-- 반복문 끝나는 구간 -->
