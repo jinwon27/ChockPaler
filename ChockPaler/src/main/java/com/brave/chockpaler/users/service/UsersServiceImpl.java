@@ -108,7 +108,9 @@ public class UsersServiceImpl implements UsersService{
 
 	@Override
 	public void deleteUser(HttpSession session, ModelAndView mView) {
-		// TODO Auto-generated method stub
+		String id = (String)session.getAttribute("id");
+		dao.delete(id);
+		session.removeAttribute("id");
 		
 	}
 

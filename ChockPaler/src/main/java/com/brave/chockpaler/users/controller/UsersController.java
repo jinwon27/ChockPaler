@@ -106,4 +106,14 @@ public class UsersController {
 		return mView;
 	}
 	
+	@RequestMapping("/users/delete")
+	public ModelAndView authDelete(HttpSession session, ModelAndView mView,
+			 HttpServletRequest request) {
+		
+		service.deleteUser(session, mView);
+		
+		mView.setViewName("users/delete");
+		return mView;
+	}
+	
 }
