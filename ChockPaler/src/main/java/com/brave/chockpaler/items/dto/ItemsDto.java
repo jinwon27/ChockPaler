@@ -2,47 +2,46 @@ package com.brave.chockpaler.items.dto;
 
 public class ItemsDto {
 	
-	private String type;
-	private int ItemNum;
-	private String name;
-	private String detail;
-	private int pirce;
-	private String byeoljum;
-	private String updateDate;
-	private String img;
-	private int RemainCount;
-	
+	private String itemType; //cookie or 멀라 ㅠ
+	private int num; // seq.NEXTVAL
+	private String name; // 상품 이름
+	private String detail; // 상품 설면
+	private int price; // 가격 설정
+	private int starPoint; 
+	private String regdate; 
+	private String img; // 이미지 링크 등록
+	private int remainCount; // 재고는 처음에 설정해줘야댐 몇개 있는지
 	
 	public ItemsDto() {}
-
-	public ItemsDto(String type, int itemNum, String name, String detail, int pirce, String byeoljum, String updateDate,
+	
+	public ItemsDto(String itemType, int num, String name, String detail, int price, int starPoint, String regdate,
 			String img, int remainCount) {
 		super();
-		this.type = type;
-		ItemNum = itemNum;
+		this.itemType = itemType;
+		this.num = num;
 		this.name = name;
 		this.detail = detail;
-		this.pirce = pirce;
-		this.byeoljum = byeoljum;
-		this.updateDate = updateDate;
+		this.price = price;
+		this.starPoint = starPoint;
+		this.regdate = regdate;
 		this.img = img;
-		RemainCount = remainCount;
+		this.remainCount = remainCount;
 	}
 
-	public String getType() {
-		return type;
+	public String getItemType() {
+		return itemType;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setItemType(String itemType) {
+		this.itemType = itemType;
 	}
 
-	public int getItemNum() {
-		return ItemNum;
+	public int getNum() {
+		return num;
 	}
 
-	public void setItemNum(int itemNum) {
-		ItemNum = itemNum;
+	public void setNum(int num) {
+		this.num = num;
 	}
 
 	public String getName() {
@@ -61,28 +60,28 @@ public class ItemsDto {
 		this.detail = detail;
 	}
 
-	public int getPirce() {
-		return pirce;
+	public int getPrice() {
+		return price;
 	}
 
-	public void setPirce(int pirce) {
-		this.pirce = pirce;
+	public void setPrice(int price) {
+		this.price = price;
 	}
 
-	public String getByeoljum() {
-		return byeoljum;
+	public int getStarPoint() {
+		return starPoint;
 	}
 
-	public void setByeoljum(String byeoljum) {
-		this.byeoljum = byeoljum;
+	public void setStarPoint(int starPoint) {
+		this.starPoint = starPoint;
 	}
 
-	public String getUpdateDate() {
-		return updateDate;
+	public String getRegdate() {
+		return regdate;
 	}
 
-	public void setUpdateDate(String updateDate) {
-		this.updateDate = updateDate;
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
 	}
 
 	public String getImg() {
@@ -94,12 +93,11 @@ public class ItemsDto {
 	}
 
 	public int getRemainCount() {
-		return RemainCount;
+		return remainCount;
 	}
 
 	public void setRemainCount(int remainCount) {
-		RemainCount = remainCount;
+		this.remainCount = remainCount;
 	}
-	
 	
 }

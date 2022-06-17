@@ -46,6 +46,8 @@ count NUMBER,
 price NUMBER
 );
 
+CREATE SEQUENCE items_seq;
+
 CREATE TABLE ITEMS(
 item_type VARCHAR2(50),
 item_num NUMBER PRIMARY KEY,

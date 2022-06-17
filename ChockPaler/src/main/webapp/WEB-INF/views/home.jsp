@@ -22,6 +22,7 @@
 			</p>
 		</c:otherwise>
 	</c:choose>
+
 	<a href="${pageContext.request.contextPath }/users/info.do">마이페이지</a>
 	<a href="${pageContext.request.contextPath }/users/shoppingbasket.do">장바구니</a>
 	<a href="${pageContext.request.contextPath }/shop/orderinquiry.do">주문배송조회</a>
@@ -47,7 +48,7 @@
 			<tbody>
 			<!-- 반복문 돌릴 구간 -->
 				<tr>
-					<td>${requestScope.itemDto.name }</td>
+					<td></td>
 					<td>${requestScope.itemDto.content }</td>
 				</tr>
 			<!-- 반복문 끝나는 구간 -->
