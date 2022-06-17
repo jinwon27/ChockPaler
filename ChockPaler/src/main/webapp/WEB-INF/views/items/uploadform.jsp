@@ -18,19 +18,19 @@
 			</select>
 			<br />
 			<label for="name">상품명</label>
-			<input type="text" id="name" name="name"/>
+			<input type="text" id="name" name="name" placeholder="상품명 입력.." />
 			<br />
 			<label for="detail">상세정보</label>
 			<textarea name="detail" id="detail"></textarea>
 			<br />
 			<label for="price">price</label>
-			<input type="text" id="price" name="price" /> 원
+			<input type="text" id="price" name="price" placeholder="가격 입력..." /> 원
 			<br />
 			<label for="">이미지</label>
 			<!-- image 첨부하는 요소 -->
 			<br />
-			<label for="">재고</label>
-			<input type="text" id="" name=""/>
+			<label for="remainCount">재고</label>
+			<input type="text" id="remainCount" name="remainCount" placeholder="재고 입력..."/>
 			<br />
 			<button type="submit">Upload</button>
 		</form>
