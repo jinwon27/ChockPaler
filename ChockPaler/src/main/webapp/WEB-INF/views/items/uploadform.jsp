@@ -26,8 +26,9 @@
 			<label for="price">price</label>
 			<input type="text" id="price" name="price" placeholder="가격 입력..." /> 원
 			<br />
-			<label for="">이미지</label>
-			<!-- image 첨부하는 요소 -->
+			<label for="image">이미지</label>
+			<input type="file" name="image" id="image"
+	            	accept=".jpg, .jpeg, .png, .JPG, .JPEG"/>
 			<br />
 			<label for="remainCount">재고</label>
 			<input type="text" id="remainCount" name="remainCount" placeholder="재고 입력..."/>
