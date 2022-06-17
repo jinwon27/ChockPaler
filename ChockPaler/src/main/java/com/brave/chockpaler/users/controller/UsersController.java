@@ -98,4 +98,12 @@ public class UsersController {
 		return mView;
 	}
 	
+	@RequestMapping("/users/updateform")
+	public ModelAndView authUpdateForm(ModelAndView mView, HttpSession session,
+			HttpServletRequest request) {
+		service.getInfo(session, mView);
+		mView.setViewName("users/updateform");
+		return mView;
+	}
+	
 }
