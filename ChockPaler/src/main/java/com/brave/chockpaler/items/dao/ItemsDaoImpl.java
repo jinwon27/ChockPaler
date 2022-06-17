@@ -12,41 +12,9 @@ import com.brave.chockpaler.items.dto.ItemsDto;
 public class ItemsDaoImpl implements ItemsDao {
 	@Autowired
 	private SqlSession session;
-	
-	@Override
-	public List<ItemsDto> getList(ItemsDto dto) {
-		
-		return null;
-	}
-
-	@Override
-	public void insert(ItemsDto dto) {
-		
-		
-	}
-
-	@Override
-	public void delete(int num) {
-		
-		
-	}
-
-	@Override
-	public void update(ItemsDto dto) {
-		
-		
-	}
 
 	@Override
 	public ItemsDto getData(int num) {
-		
-		return null;
+		return session.selectOne("ItemsMapper.getData", num);
 	}
-
-	@Override
-	public ItemsDto BSCount(int num) {
-		
-		return null;
-	}
-
 }

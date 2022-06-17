@@ -43,14 +43,16 @@
 			<thead>
 				<tr>
 					<th>제목</th>
-					<th>내용</th>
+					<th>상품</th>
 				</tr>
 			</thead>
 			<tbody>
 			<!-- 반복문 돌릴 구간 -->
+			<!-- home.jsp 인데, 이곳 session 영역에 itemsDto 가 넘어 와서, 아래에 반복문으로 출력이 되는
+				부분입니다. -->
 				<tr>
-					<td></td>
-					<td>${requestScope.itemDto.content }</td>
+					<td><a href="${pageContext.request.contextPath }/items/iteminfo.do?num=1"></a></td>
+					<td>${dto.name }</td>
 				</tr>
 			<!-- 반복문 끝나는 구간 -->
 			</tbody>
