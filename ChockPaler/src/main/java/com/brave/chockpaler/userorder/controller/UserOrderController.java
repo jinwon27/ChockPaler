@@ -19,20 +19,20 @@ public class UserOrderController {
 		mView.setViewName("userorder/userorder");
 		return mView;
 	}
-	@RequestMapping("/useorder/userorder")
-	public ModelAndView authBuy(HttpServletRequest request,ModelAndView mView) {
-		service.buy(request, mView);
-		mView.setViewName("userorder/userorder");
-		return mView;
-	}
-	@RequestMapping("/userorder/userorder")
-	public ModelAndView authCancel(HttpServletRequest request,ModelAndView mView) {
-		service.cancel(request, mView);
-		mView.setViewName("userorder/userorder");
-		return mView;
-	}
+//	@RequestMapping("/useorder/userorder")
+//	public ModelAndView authBuy(HttpServletRequest request,ModelAndView mView) {
+//		service.buy(request, mView);
+//		mView.setViewName("userorder/userorder");
+//		return mView;
+//	}
+//	@RequestMapping("/userorder/userorder")
+//	public ModelAndView authCancel(HttpServletRequest request,ModelAndView mView) {
+//		service.cancel(request, mView);
+//		mView.setViewName("userorder/userorder");
+//		return mView;
+//	}
 	
-	}
+}
 	
 	//해당 .do 메서드 매핑되는 곳
 	//웹에 " 주문이 완료되었습니다 "
