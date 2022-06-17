@@ -10,7 +10,18 @@
 	<!-- Navbar -->
 	<!-- <br /> -->
 	<!-- ${usersDto.name } 님 환영합니다 if(session.id == usersDto.id) -->
-	<a href="${pageContext.request.contextPath }/views/users/loginform.do">로그인</a>
+	<c:choose>
+		<c:when test="${ empty sessionScope.id}">
+			<a href="${pageContext.request.contextPath}/users/loginform.do">로그인</a>
+			<a href="${pageContext.request.contextPath}/users/signupform.do">회원가입</a>
+		</c:when>
+		<c:otherwise>
+			<p>
+				<a href="${pageContext.request.contextPath}/users/info.do">${sessionScope.id }</a>님 로그인중... 
+				<a href="${pageContext.request.contextPath}/users/logout.do">로그아웃</a>
+			</p>
+		</c:otherwise>
+	</c:choose>
 	<a href="${pageContext.request.contextPath }/views/users/mypage.do">마이페이지</a>
 	<a href="${pageContext.request.contextPath }/views/users/shoppingbasket.do">장바구니</a>
 	<a href="${pageContext.request.contextPath }/views/shop/orderinquiry.do">주문배송조회</a>
