@@ -22,10 +22,10 @@
 			</p>
 		</c:otherwise>
 	</c:choose>
-	<a href="${pageContext.request.contextPath }/views/users/mypage.do">마이페이지</a>
-	<a href="${pageContext.request.contextPath }/views/users/shoppingbasket.do">장바구니</a>
-	<a href="${pageContext.request.contextPath }/views/shop/orderinquiry.do">주문배송조회</a>
-	<a href="${pageContext.request.contextPath }/views/items/uploadform.do">자, 신상 팔아볼까?</a>
+	<a href="${pageContext.request.contextPath }/users/mypage.do">마이페이지</a>
+	<a href="${pageContext.request.contextPath }/users/shoppingbasket.do">장바구니</a>
+	<a href="${pageContext.request.contextPath }/shop/orderinquiry.do">주문배송조회</a>
+	<a href="${pageContext.request.contextPath }/items/uploadform.do">자, 신상 팔아볼까?</a>
 	<br />
 	<div class="container">
 		<form action="${pageContext.request.contextPath }/views/items/searchItems.do">

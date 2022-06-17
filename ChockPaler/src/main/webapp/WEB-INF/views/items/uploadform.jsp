@@ -32,7 +32,7 @@
 			<label for="remainCount">재고</label>
 			<input type="text" id="remainCount" name="remainCount" placeholder="재고 입력..."/>
 			<br />
-			<button type="submit">Upload</button>
+			<button type="submit">상품 등록</button>
 		</form>
 	</div>
 </body>
