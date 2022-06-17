@@ -70,7 +70,27 @@ public class UsersServiceImpl implements UsersService{
 
 	@Override
 	public void updateUserPwd(HttpSession session, UsersDto dto, ModelAndView mView) {
-		// TODO Auto-generated method stub
+		String id = (String)session.getAttribute("id");
+		//session에 id 에 해당하는 비밀번호 인코딩 풀기
+		
+		//현재 인코딩된 패스워드
+		String encodedPwd = dao.getData(id).getPwd();
+		//클라이언트가 적어넣은 패스워드
+		String inputPwd = dto.getPwd();
+		boolean isValid=BCrypt.checkpw(inputPwd, encodedPwd);
+		if(isValid) {
+			 String newPwd = dto.getNewPwd();
+			 //newPwd를 dto에 저장
+			 BCryptPasswordEncoder encoder=new BCryptPasswordEncoder();
+			 String newEncodedPwd=encoder.encode(newPwd);
+			 //dto 에 다시 넣어준다.
+			 dto.setNewPwd(newEncodedPwd);
+			 dto.setId(id);
+			 dao.updatePwd(dto);
+			 session.removeAttribute("id");
+		}
+		mView.addObject("isSuccess", isValid);
+		mView.addObject("id", id);
 		
 	}
 

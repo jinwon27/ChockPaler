@@ -35,7 +35,7 @@ public class UsersDaoImpl implements UsersDao{
 
 	@Override
 	public void updatePwd(UsersDto dto) {
-		// TODO Auto-generated method stub
+		session.update("users.pwdUpdate", dto);
 		
 	}
 

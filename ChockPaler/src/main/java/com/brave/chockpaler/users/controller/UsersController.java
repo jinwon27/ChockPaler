@@ -75,4 +75,27 @@ public class UsersController {
 		//UsersService 가 리턴해주는 Map 을 리턴해서 json 문자열을 응답한다. 
 		return service.isExistId(inputId);
 	}
+	
+	@RequestMapping("/users/logout")
+	public String logout(HttpSession session) {
+		session.removeAttribute("id");
+		return "users/logout";
+	}
+	
+	@RequestMapping("/users/pwd_updateform")
+	public ModelAndView authPwdUpdateForm(ModelAndView mView, HttpServletRequest request) {
+		mView.setViewName("users/pwd_updateform");
+		return mView;
+	}
+	
+	@RequestMapping("/users/pwd_update")
+	public ModelAndView authPwdUpdate(UsersDto dto, 
+			ModelAndView mView, HttpSession session, HttpServletRequest request) {
+		//서비스에 필요한 객체의 참조값을 전달해서 비밀번호 수정 로직을 처리한다.
+		service.updateUserPwd(session, dto, mView);
+		//view page 로 forward 이동해서 작업 결과를 응답한다.
+		mView.setViewName("users/pwd_update");
+		return mView;
+	}
+	
 }
