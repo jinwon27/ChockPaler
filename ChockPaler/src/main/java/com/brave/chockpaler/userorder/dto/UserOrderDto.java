@@ -1,58 +1,60 @@
 package com.brave.chockpaler.userorder.dto;
 
 public class UserOrderDto {
-	private int num;;
-	private String id;
-	private int Item_Code;
-	private String addr;
+	private int item_num;
+	private String item_type;
+	private String name;
+	private int price;
+	private String img;
+	
 	
 	public UserOrderDto() {}
 	
 	
 	
-
-	public UserOrderDto(int num, String id, int item_Code, String addr) {
+	public UserOrderDto(int item_num, String item_type, String name, int price, String img) {
 		super();
-		this.num = num;
-		this.id = id;
-		Item_Code = item_Code;
-		this.addr = addr;
+		this.item_num = item_num;
+		this.item_type = item_type;
+		this.name = name;
+		this.price = price;
+		this.img = img;
 	}
 
 
 
-
-	public int getNum() {
-		return num;
+	public int getItem_num() {
+		return item_num;
 	}
-
-	public void setNum(int num) {
-		this.num = num;
+	public void setItem_num(int item_num) {
+		this.item_num = item_num;
 	}
-
-	public String getId() {
-		return id;
+	public String getItem_type() {
+		return item_type;
 	}
-
-	public void setId(String id) {
-		this.id = id;
+	public void setItem_type(String item_type) {
+		this.item_type = item_type;
 	}
-
-	public int getItem_Code() {
-		return Item_Code;
+	public String getName() {
+		return name;
 	}
-
-	public void setItem_Code(int item_Code) {
-		Item_Code = item_Code;
+	public void setName(String name) {
+		this.name = name;
 	}
-
-	public String getAddr() {
-		return addr;
+	public int getPrice() {
+		return price;
 	}
-
-	public void setAddr(String addr) {
-		this.addr = addr;
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
 	}
 	
+	
+	 
 	
 }

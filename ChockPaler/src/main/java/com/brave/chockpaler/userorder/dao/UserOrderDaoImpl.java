@@ -1,5 +1,7 @@
 package com.brave.chockpaler.userorder.dao;
 
+
+
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -7,39 +9,42 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.brave.chockpaler.userorder.dto.UserOrderDto;
 
+
 public class UserOrderDaoImpl implements UserOrderDao{
 
 	@Autowired
 	private SqlSession session;
-	
-	@Override
-	public void insert(UserOrderDto dto) {
-		session.insert("userorder.insert", dto);
-		
-	}
 
 	@Override
-	public UserOrderDto getData(int num) {
-		
-		return session.selectOne("userorder.getData", num);
-	}
-
-	@Override
-	public void delete(int num) {
-		session.delete("userorder.delete",num);
+	public void addOrder(UserOrderDto dto) {
+		session.insert("userorder.addOrder",dto);
 		
 	}
 
 	@Override
 	public List<UserOrderDto> getList(UserOrderDto dto) {
 		
-		return session.selectList("userorder.getList", dto);
+		return session.selectList("userorder.getList");
 	}
 
 	@Override
-	public int getCount(UserOrderDto dto) {
+	public void delete(UserOrderDto dto) {
+		session.delete("userorder.delete", dto);
 		
-		return session.selectOne("userorder.getCount", dto);
 	}
+
+	@Override
+	public void getData(UserOrderDto dto) {
+		session.update("userorder.getData",dto);
+		
+	}
+
+	@Override
+	public void getPrice(UserOrderDto dto) {
+		session.selectOne("userorder.getPrice", dto);
+		
+	}
+	
+	
 
 }
