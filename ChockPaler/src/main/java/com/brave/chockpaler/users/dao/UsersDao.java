@@ -15,4 +15,5 @@ public interface UsersDao {
 		public void update(UsersDto dto);
 		//회원 정보를 삭제하는 메소드
 		public void delete(String id);
+
 }

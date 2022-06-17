@@ -12,6 +12,7 @@ public class ItemsDto {
 	private String img;
 	private int RemainCount;
 	
+	
 	public ItemsDto() {}
 
 	public ItemsDto(String type, int itemNum, String name, String detail, int pirce, String byeoljum, String updateDate,
