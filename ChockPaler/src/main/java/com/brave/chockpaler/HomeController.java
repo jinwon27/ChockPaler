@@ -21,6 +21,9 @@ public class HomeController {
 		
 		request.setAttribute("list", list);
 		
+		List<ItemsDto> itemList = new ArrayList();
+		request.setAttribute("itemList", itemList);
+		
 		return "home";
 	}
 	

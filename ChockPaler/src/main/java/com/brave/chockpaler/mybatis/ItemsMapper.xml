@@ -5,4 +5,8 @@
 		SELECT * FROM items
 		WHERE num = #{num }
 	</select>
+	
+	<select id="getList" resultType="com.brave.chockpaler.items.dto.ItemsDto">
+		SELECT * FROM items
+	</select>
 </mapper>

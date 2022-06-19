@@ -17,4 +17,9 @@ public class ItemsDaoImpl implements ItemsDao {
 	public ItemsDto getData(int num) {
 		return session.selectOne("ItemsMapper.getData", num);
 	}
+
+	@Override
+	public List<ItemsDto> getList() {
+		return session.selectList("ItemsMapper.getList");
+	}
 }

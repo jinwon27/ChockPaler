@@ -22,6 +22,11 @@ public class ItemsServiceImpl implements ItemsService {
 	public ItemsDto getItemData(int num) {
 		return dao.getData(num);
 	}
+
+	@Override
+	public List<ItemsDto> getItemList() {
+		return dao.getList();
+	}
 }
 
 

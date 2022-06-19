@@ -37,27 +37,23 @@
 	</div>
 	<br />  <!-- div는 block 요소라 <br /> 이 필요없던가 ? -->
 	
-	<!-- 상품 리스트 출력 -->
-	<div class="container">
-		<table>
-			<thead>
-				<tr>
-					<th>제목</th>
-					<th>상품</th>
-				</tr>
-			</thead>
-			<tbody>
-			<!-- 반복문 돌릴 구간 -->
-			<!-- home.jsp 인데, 이곳 session 영역에 itemsDto 가 넘어 와서, 아래에 반복문으로 출력이 되는
-				부분입니다. -->
-				<tr>
-					<td><a href="${pageContext.request.contextPath }/items/iteminfo.do?num=1"></a></td>
-					<td>${dto.name }</td>
-				</tr>
-			<!-- 반복문 끝나는 구간 -->
-			</tbody>
-		</table>
-	</div>
+	<h2>
+		<span> ITEMS </span>
+	</h2>
+	<div id="underline"></div>
+	<ul class="itemList">
+		<!-- 반복문 -->
+		<c:forEach items="${itemList }" step=1 varStatus="status">
+			<li>
+				<div>
+					<div>
+						<a href="상품 이미지경로"></a>
+					</div>
+					<a href="상품 간단설명된 이미지 경로"></a>
+				</div>
+			</li>
+		</c:forEach>
+	</ul>
 	
 	<!-- 웹 하단부 info -->
 </body>
