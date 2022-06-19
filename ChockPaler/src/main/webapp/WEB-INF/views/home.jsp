@@ -43,13 +43,17 @@
 	<div id="underline"></div>
 	<ul class="itemList">
 		<!-- 반복문 -->
-		<c:forEach items="${itemList }" step=1 varStatus="status">
+		<c:forEach var="tmp" items="${itemList }" step=1 varStatus="status" >
 			<li>
 				<div>
 					<div>
 						<a href="상품 이미지경로"></a>
 					</div>
-					<a href="상품 간단설명된 이미지 경로"></a>
+					<!-- <a href="상품 간단설명된 이미지 경로"></a>  -->
+					<p>${tmp.itemType }</p>
+					<p>${tmp.name }</p>
+					<p>${tmp.detail }</p>
+					<p>${tmp.price }</p>
 				</div>
 			</li>
 		</c:forEach>
