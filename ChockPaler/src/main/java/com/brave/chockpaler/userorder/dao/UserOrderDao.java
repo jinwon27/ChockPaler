@@ -8,9 +8,10 @@ import com.brave.chockpaler.userorder.dto.UserOrderDto;
 
 
 public interface UserOrderDao {
-	public void addOrder(UserOrderDto dto);
-	public List<UserOrderDto> getList(UserOrderDto dto);
-	public void delete(UserOrderDto dto);
-	public void getData(UserOrderDto dto);
-	public void getPrice(UserOrderDto dto);
+	
+	public List<UserOrderDto> getList(String id);
+	public int addCart(UserOrderDto dto);
+	public int deleteCart(int num);
+	public int countCart(UserOrderDto dto);
+	
 }

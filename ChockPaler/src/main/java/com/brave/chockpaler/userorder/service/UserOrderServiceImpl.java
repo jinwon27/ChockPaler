@@ -27,46 +27,6 @@ public class UserOrderServiceImpl implements UserOrderService {
 	private UserOrderDao userorderDao;
 	
 
-	@Override
-	public void getList(ModelAndView mView) {
-		
-		List<UserOrderDto> list=userorderDao.getList(null);
-		
-		mView.addObject("list", list);
-		
-	}
-	@Transactional
-	@Override
-	public void buy(HttpServletRequest request, ModelAndView mView) {
-		
-		String name=(String)request.getSession().getAttribute("name");
-		int item_num=Integer.parseInt(request.getParameter("item_num"));
-	
-		int price=Integer.parseInt(request.getParameter("price"));
-
-		UserOrderDto dto=new UserOrderDto();
-		
-		dto.setItem_num(item_num);
-		dto.setName(name);
-		dto.setPrice(price);
-		userorderDao.addOrder(dto);
-		userorderDao.getData(dto);
-		
-		
-	}
-
-	@Override
-	public void cancel(HttpServletRequest request, ModelAndView mView) {
-		int item_num=Integer.parseInt(request.getParameter("item_num"));
-		UserOrderDto dto=new UserOrderDto();
-		dto.setItem_num(item_num);
-		userorderDao.delete(dto);
-		
-	}
-	
-
-	
-		
 	
 
 }

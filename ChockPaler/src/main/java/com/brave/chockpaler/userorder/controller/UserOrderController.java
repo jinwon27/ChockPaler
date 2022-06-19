@@ -13,24 +13,7 @@ public class UserOrderController {
 	@Autowired
 	private UserOrderService service;
 	
-	@RequestMapping("/userorder/userorder")
-	public ModelAndView list(ModelAndView mView) {
-		service.getList(mView);
-		mView.setViewName("userorder/userorder");
-		return mView;
-	}
-//	@RequestMapping("/useorder/userorder")
-//	public ModelAndView authBuy(HttpServletRequest request,ModelAndView mView) {
-//		service.buy(request, mView);
-//		mView.setViewName("userorder/userorder");
-//		return mView;
-//	}
-//	@RequestMapping("/userorder/userorder")
-//	public ModelAndView authCancel(HttpServletRequest request,ModelAndView mView) {
-//		service.cancel(request, mView);
-//		mView.setViewName("userorder/userorder");
-//		return mView;
-//	}
+	
 	
 }
 	

@@ -17,35 +17,32 @@ public class UserOrderDaoImpl implements UserOrderDao{
 	private SqlSession session;
 
 	@Override
-	public void addOrder(UserOrderDto dto) {
-		session.insert("userorder.addOrder",dto);
+	public List<UserOrderDto> getList(String id) {
 		
+		return session.selectList("userorder.getList", id);
 	}
 
 	@Override
-	public List<UserOrderDto> getList(UserOrderDto dto) {
+	public int addCart(UserOrderDto dto) {
 		
-		return session.selectList("userorder.getList");
+		return session.insert("userorder.insert", dto);
 	}
 
 	@Override
-	public void delete(UserOrderDto dto) {
-		session.delete("userorder.delete", dto);
+	public int deleteCart(int num) {
 		
+		return session.delete("userorder.delete", num);
 	}
 
 	@Override
-	public void getData(UserOrderDto dto) {
-		session.update("userorder.getData",dto);
+	public int countCart(UserOrderDto dto) {
 		
+		return session.selectOne("userorder.count", dto);
 	}
 
-	@Override
-	public void getPrice(UserOrderDto dto) {
-		session.selectOne("userorder.getPrice", dto);
-		
-	}
 	
 	
+
+
 
 }
