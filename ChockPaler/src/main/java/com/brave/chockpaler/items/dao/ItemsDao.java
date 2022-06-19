@@ -9,4 +9,6 @@ public interface ItemsDao {
 	public ItemsDto getData(int num);
 	
 	public List<ItemsDto> getList();
+	
+	public int getCount();
 }

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.brave.chockpaler.items.dto.ItemsDto;
 import com.brave.chockpaler.items.service.ItemsService;
+import com.brave.chockpaler.util.pageUtil;
 
 @Controller
 public class HomeController {
@@ -27,6 +28,11 @@ public class HomeController {
 		request.setAttribute("list", list);
 		
 		request.setAttribute("itemList", service.getItemList());
+		
+		pageUtil pUtil = new pageUtil(service.getItemCount(), 1);
+		request.setAttribute("startPageNum", pUtil.getPageBegin());
+		request.setAttribute("endPageNum", pUtil.getPageEnd());
+		request.setAttribute("pageUtil", pUtil);
 		
 		return "home";
 	}

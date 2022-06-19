@@ -22,4 +22,9 @@ public class ItemsDaoImpl implements ItemsDao {
 	public List<ItemsDto> getList() {
 		return session.selectList("ItemsMapper.getList");
 	}
+
+	@Override
+	public int getCount() {
+		return session.selectOne("ItemsMapper.getItemCount");
+	}
 }

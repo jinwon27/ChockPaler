@@ -10,4 +10,5 @@ public interface ItemsService {
 	
 	public List<ItemsDto> getItemList();
 	
+	public int getItemCount();
 }

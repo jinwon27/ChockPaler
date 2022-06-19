@@ -9,4 +9,9 @@
 	<select id="getList" resultType="com.brave.chockpaler.items.dto.ItemsDto">
 		SELECT item_type, name, detail, price, regdate, remain_count FROM items
 	</select>
+	
+	<select id="getItemCount" resultType="int">
+		SELECT COUNT(*) FROM
+		items
+	</select>
 </mapper>

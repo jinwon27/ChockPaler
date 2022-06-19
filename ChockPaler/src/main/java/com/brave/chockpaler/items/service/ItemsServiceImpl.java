@@ -27,6 +27,11 @@ public class ItemsServiceImpl implements ItemsService {
 	public List<ItemsDto> getItemList() {
 		return dao.getList();
 	}
+
+	@Override
+	public int getItemCount() {
+		return dao.getCount();
+	}
 }
 
 
