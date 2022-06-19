@@ -2,46 +2,46 @@ package com.brave.chockpaler.items.dto;
 
 public class ItemsDto {
 	
-	private String itemType; //cookie or 멀라 ㅠ
-	private int num; // seq.NEXTVAL
+	private String item_type; //cookie or 멀라 ㅠ
+	private int item_num; // seq.NEXTVAL
 	private String name; // 상품 이름
 	private String detail; // 상품 설면
 	private int price; // 가격 설정
 	private int starPoint; 
 	private String regdate; 
 	private String img; // 이미지 링크 등록
-	private int remainCount; // 재고는 처음에 설정해줘야댐 몇개 있는지
+	private int remain_count; // 재고는 처음에 설정해줘야댐 몇개 있는지
 	
 	public ItemsDto() {}
-	
-	public ItemsDto(String itemType, int num, String name, String detail, int price, int starPoint, String regdate,
-			String img, int remainCount) {
+
+	public ItemsDto(String item_type, int item_num, String name, String detail, int price, int starPoint,
+			String regdate, String img, int remain_count) {
 		super();
-		this.itemType = itemType;
-		this.num = num;
+		this.item_type = item_type;
+		this.item_num = item_num;
 		this.name = name;
 		this.detail = detail;
 		this.price = price;
 		this.starPoint = starPoint;
 		this.regdate = regdate;
 		this.img = img;
-		this.remainCount = remainCount;
+		this.remain_count = remain_count;
 	}
 
-	public String getItemType() {
-		return itemType;
+	public String getItem_type() {
+		return item_type;
 	}
 
-	public void setItemType(String itemType) {
-		this.itemType = itemType;
+	public void setItem_type(String item_type) {
+		this.item_type = item_type;
 	}
 
-	public int getNum() {
-		return num;
+	public int getItem_num() {
+		return item_num;
 	}
 
-	public void setNum(int num) {
-		this.num = num;
+	public void setItem_num(int item_num) {
+		this.item_num = item_num;
 	}
 
 	public String getName() {
@@ -92,12 +92,12 @@ public class ItemsDto {
 		this.img = img;
 	}
 
-	public int getRemainCount() {
-		return remainCount;
+	public int getRemain_count() {
+		return remain_count;
 	}
 
-	public void setRemainCount(int remainCount) {
-		this.remainCount = remainCount;
+	public void setRemain_count(int remain_count) {
+		this.remain_count = remain_count;
 	}
 	
 }

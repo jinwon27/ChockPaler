@@ -3,6 +3,11 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
 <html>
 <head>
+	<style>
+		li{
+			display: inline-block;
+		}
+	</style>
 	<title>/home.jsp</title>
 </head>
 <body>
@@ -43,17 +48,17 @@
 	<div id="underline"></div>
 	<ul class="itemList">
 		<!-- 반복문 -->
-		<c:forEach var="tmp" items="${itemList }" step=1 varStatus="status" >
+		<c:forEach var="tmp" items="${itemList }" step="1" varStatus="status" >
 			<li>
 				<div>
 					<div>
 						<a href="상품 이미지경로"></a>
 					</div>
 					<!-- <a href="상품 간단설명된 이미지 경로"></a>  -->
-					<p>${tmp.itemType }</p>
+					<p>${tmp.item_type }</p>
 					<p>${tmp.name }</p>
 					<p>${tmp.detail }</p>
-					<p>${tmp.price }</p>
+					<p>${tmp.price } 원</p>
 				</div>
 			</li>
 		</c:forEach>
