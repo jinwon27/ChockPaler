@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.brave.chockpaler.items.dto.ItemsDto;
+import com.brave.chockpaler.util.pageUtil;
 
 @Repository
 public class ItemsDaoImpl implements ItemsDao {
@@ -19,8 +20,8 @@ public class ItemsDaoImpl implements ItemsDao {
 	}
 
 	@Override
-	public List<ItemsDto> getList() {
-		return session.selectList("ItemsMapper.getList");
+	public List<ItemsDto> getList(pageUtil util) {
+		return session.selectList("ItemsMapper.getList", util);
 	}
 
 	@Override

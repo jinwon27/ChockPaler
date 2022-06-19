@@ -6,8 +6,15 @@
 		WHERE num = #{num }
 	</select>
 	
-	<select id="getList" resultType="com.brave.chockpaler.items.dto.ItemsDto">
-		SELECT item_type, name, detail, price, regdate, remain_count FROM items
+	<select id="getList" resultType="com.brave.chockpaler.items.dto.ItemsDto" parameterType="com.brave.chockpaler.util.pageUtil">
+		SELECT *
+		FROM
+			(SELECT result1.*, ROWNUM AS rnum
+			FROM
+				(SELECT item_type, item_num, name, detail, price, regdate, remain_count
+					FROM items
+					ORDER BY item_num DESC) result1)
+		WHERE rnum BETWEEN #{pageBegin} AND #{pageEnd}
 	</select>
 	
 	<select id="getItemCount" resultType="int">

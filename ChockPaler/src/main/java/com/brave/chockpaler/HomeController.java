@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.brave.chockpaler.items.dto.ItemsDto;
 import com.brave.chockpaler.items.service.ItemsService;
@@ -20,16 +21,16 @@ public class HomeController {
 	private ItemsService service;
 	
 	@RequestMapping("/home")
-	public String home(HttpServletRequest request) {
+	public String home(HttpServletRequest request, @RequestParam(defaultValue="1") int curPage) {
 		
 		List<String> list=new ArrayList<String>();
 		list.add("촠팔러");
 		
 		request.setAttribute("list", list);
 		
-		request.setAttribute("itemList", service.getItemList());
+		pageUtil pUtil = new pageUtil(service.getItemCount(), curPage);
+		request.setAttribute("itemList", service.getItemList(pUtil));
 		
-		pageUtil pUtil = new pageUtil(service.getItemCount(), 1);
 		request.setAttribute("startPageNum", pUtil.getPageBegin());
 		request.setAttribute("endPageNum", pUtil.getPageEnd());
 		request.setAttribute("pageUtil", pUtil);
