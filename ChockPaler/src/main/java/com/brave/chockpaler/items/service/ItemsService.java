@@ -20,4 +20,7 @@ public interface ItemsService {
 	public void delete(int num);
 	//이미지 upload & DB 저장하기
 	public ItemsDto saveImage(ItemsDto dto, HttpServletRequest request);
+
+	public void insert(ItemsDto dto);
+
 }
