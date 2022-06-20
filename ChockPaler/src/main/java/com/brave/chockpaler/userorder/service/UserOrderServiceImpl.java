@@ -29,16 +29,16 @@ public class UserOrderServiceImpl implements UserOrderService {
 
 
 	@Override
-<<<<<<< HEAD
 	public void insert(UserOrderDto dto) {
-		userorderDao.insert(dto);		
-=======
+		userorderDao.insert(dto)		
+		
+	@Override	
 	public void getList(ModelAndView mView) {
 		
 		List<UserOrderDto> list=userorderDao.getList(null);
 		
 		mView.addObject("list", list);
->>>>>>> branch 'master' of https://github.com/usang0320/ChockPaler.git
+
 	}
 
 	@Override
