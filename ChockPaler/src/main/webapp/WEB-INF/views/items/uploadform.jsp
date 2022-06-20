@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class="container">
-		<form action="${pageContext.request.contextPath }/views/items/upload.do">
+		<form action="${pageContext.request.contextPath }/items/upload.do">
 			<label for="type">타입</label>
 			<select name="type" id="type">
 				<option value="">선택</option>

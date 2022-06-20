@@ -35,6 +35,12 @@ public class ItemsServiceImpl implements ItemsService {
 	public int getItemCount() {
 		return dao.getCount();
 	}
+
+	@Override
+	public void insert(ItemsDto dto,HttpServletRequest request) {
+		dao.insert(dto);
+		
+	}
 }
 
 

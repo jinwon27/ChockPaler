@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="ItemsMapper">
-	<select id="getData" resultType="com.brave.chockpaler.items.dto.ItemsDto" parameterType="int">
+<mapper namespace="Items">
+	<insert id="insert">
+		INSERT INTO items
+		(item_type, name, detail, price, img, remain_count)
+		VALUES (seq_items.NEXTVAL,#{item_type},#{name},#{detail},#{price},#{img},#{remain_count})
+	</insert>
+
+	<select id="getData" resultType="itemsDto" parameterType="int">
 		SELECT * FROM items
 		WHERE num = #{num }
 	</select>
 	
-	<select id="getList" resultType="com.brave.chockpaler.items.dto.ItemsDto" parameterType="com.brave.chockpaler.util.pageUtil">
+	<select id="getList" resultType="itemsDto" parameterType="com.brave.chockpaler.util.pageUtil">
 		SELECT *
 		FROM
 			(SELECT result1.*, ROWNUM AS rnum

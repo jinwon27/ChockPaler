@@ -12,4 +12,6 @@ public interface ItemsDao {
 	public List<ItemsDto> getList(pageUtil util);
 	
 	public int getCount();
+	
+	public void insert(ItemsDto dto);
 }
