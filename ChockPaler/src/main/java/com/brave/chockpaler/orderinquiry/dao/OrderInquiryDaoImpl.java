@@ -14,6 +14,7 @@ public class OrderInquiryDaoImpl implements OrderInquiryDao{
 	
 	@Override
 	public OrderInquiryDto getData(String id) {
+		
 		return session.selectOne("OrderInquiry.getData", id);
 	}
 

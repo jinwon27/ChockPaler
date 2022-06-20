@@ -14,11 +14,18 @@
 </style>
 <body>
 	<div class="container">
-		<p>주문번호 : ${dto.num}</p>
-		<p>주문자 : ${dto.id}</p>
-		<p>주소 : ${dto.addr}</p>
-		<p>상품명 : ${dto.item_name}</p>
-		<a href="${pageContext.request.contextPath }/home.do">HOME</a>
+		<c:choose>
+			<c:when test="${empty dto }">
+				<p>주문 내역이 없습니다.</p>
+			</c:when>
+			<c:otherwise>
+				<p>주문번호 : ${dto.num}</p>
+				<p>주문자 : ${dto.id}</p>
+				<p>주소 : ${dto.addr}</p>
+				<p>상품명 : ${dto.item_name}</p>
+				<a href="${pageContext.request.contextPath }/home.do">HOME</a>
+			</c:otherwise>
+		</c:choose>
 	</div>
 </body>
 </html>
