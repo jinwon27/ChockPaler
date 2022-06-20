@@ -101,16 +101,11 @@
 				<c:forEach var="num" begin="${pageUtil.blockBegin }"
 					end="${pageUtil.blockEnd }">
 					<!-- 현재페이지이면 하이퍼링크 제거 -->
-					<c:choose>
-						<c:when test="${num == pageUtil.curPage }">
-							<span class="page-link">${num }</span>
-						</c:when>
-						<c:otherwise>
-							<li class="page-item">
-								<a class="page-link" href="${pageContext.request.contextPath}/home.do?curPage=${num}">${num }</a>
-							</li>
-						</c:otherwise>
-					</c:choose>
+					
+					<li class="page-item ${num == pageUtil.curPage ? 'active':''}">
+						<a class="page-link" href="${pageContext.request.contextPath}/home.do?curPage=${num}">${num }</a>
+					</li>
+					
 				</c:forEach>
 				<!-- 다음페이지 블록으로 이동 : 현재 페이지 블럭이 전체 페이지 블럭보다 작거나 같으면 [다음] 하이퍼링크를 화면에 출력-->
 				<c:if

@@ -9,7 +9,7 @@
 </head>
 <body>
 	<script>
-		alert("doenrok.");
+		alert("등록 되었습니다!");
 		location.href = "${pageContext.request.contextPath }/home.do";
 	</script>
 </body>

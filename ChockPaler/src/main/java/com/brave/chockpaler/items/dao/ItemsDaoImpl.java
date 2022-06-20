@@ -34,6 +34,4 @@ public class ItemsDaoImpl implements ItemsDao {
 		session.selectOne("Items.insert", dto);
 		
 	}
-
-
 }

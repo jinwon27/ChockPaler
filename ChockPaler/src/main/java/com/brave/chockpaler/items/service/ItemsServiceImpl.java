@@ -37,9 +37,8 @@ public class ItemsServiceImpl implements ItemsService {
 	}
 
 	@Override
-	public void insert(ItemsDto dto,HttpServletRequest request) {
+	public void insert(ItemsDto dto) {
 		dao.insert(dto);
-		
 	}
 }
 

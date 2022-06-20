@@ -15,5 +15,5 @@ public interface ItemsService {
 	
 	public int getItemCount();
 
-	public void insert(ItemsDto dto, HttpServletRequest request);
+	public void insert(ItemsDto dto);
 }

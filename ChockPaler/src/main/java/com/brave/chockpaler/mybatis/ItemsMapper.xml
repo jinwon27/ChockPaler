@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Items">
-	<insert id="insert">
+	<insert id="insert" parameterType="itemsDto">
 		INSERT INTO items
-		(item_type, name, detail, price, img, remain_count)
-		VALUES (seq_items.NEXTVAL,#{item_type},#{name},#{detail},#{price},#{img},#{remain_count})
+		(item_num, item_type, name, detail, price, img, remain_count)
+		VALUES(items_seq.NEXTVAL, #{item_type}, #{name}, #{detail}, #{price}, #{img}, #{remain_count})
 	</insert>
 
 	<select id="getData" resultType="itemsDto" parameterType="int">

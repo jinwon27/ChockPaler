@@ -18,7 +18,8 @@ public class ItemsController {
 	
 	
 	@RequestMapping("/items/upload")
-	public String insert(ItemsDto dto, HttpServletRequest request) {
+	public String insert(ItemsDto dto) {
+		service.insert(dto);
 		return "items/upload";
 	}
 	
