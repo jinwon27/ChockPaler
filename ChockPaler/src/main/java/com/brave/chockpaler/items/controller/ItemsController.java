@@ -13,8 +13,6 @@ import com.brave.chockpaler.items.service.ItemsService;
 @Controller
 public class ItemsController {
 	
-	
-	
 	@Autowired
 	private ItemsService service;
 	

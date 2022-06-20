@@ -59,3 +59,10 @@ regdate DATE,
 img VARCHAR2(300),
 remain_count NUMBER CHECK(remain_count >= 0)
 );
+
+CREATE TABLE orderinquiry(
+num NUMBER NOT NULL,
+id VARCHAR2(50) NOT NULL,
+addr VARCHAR2(200),
+item_name VARCHAR2(200)
+);
