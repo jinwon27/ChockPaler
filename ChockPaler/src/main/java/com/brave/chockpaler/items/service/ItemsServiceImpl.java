@@ -38,10 +38,6 @@ public class ItemsServiceImpl implements ItemsService {
 		return dao.getCount();
 	}
 
-	@Override
-	public void insert(ItemsDto dto) {
-		dao.insert(dto);
-	}
 
 	@Override
 	public void delete(int num) {
@@ -49,7 +45,7 @@ public class ItemsServiceImpl implements ItemsService {
 	}
 
 	@Override
-	public ItemsDto saveImage(ItemsDto dto, HttpServletRequest request) {
+	public void saveImage(ItemsDto dto, HttpServletRequest request) {
 		//업로드된 이미지의 정보를 가지고있는 MultipartFile 객체의 참조값 얻어오기
 		MultipartFile image=dto.getImg();
 		//저장할 파일 이름 만들기 위해서 사용됨
@@ -76,14 +72,15 @@ public class ItemsServiceImpl implements ItemsService {
 		dto.setImgPath("/upload"+saveImgName);
 		
 		dao.insert(dto);
-		return dto;
+
 	}
 
 	@Override
 	public void insert(ItemsDto dto, HttpServletRequest request) {
-		// TODO Auto-generated method stub
+		dao.insert(dto);
 		
 	}
+
 }
 
 
