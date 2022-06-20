@@ -3,8 +3,8 @@
 <mapper namespace="Items">
 	<insert id="insert">
 		INSERT INTO items
-		(item_type, name, detail, price, img, remain_count)
-		VALUES (seq_items.NEXTVAL,#{item_type},#{name},#{detail},#{price},#{img},#{remain_count})
+		(item_type, name, detail, price, img, imgPath remain_count)
+		VALUES (seq_items.NEXTVAL,#{item_type},#{name},#{detail},#{price},#{img},#{imgPath},#{remain_count})
 	</insert>
 
 	<select id="getData" resultType="itemsDto" parameterType="int">

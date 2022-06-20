@@ -70,15 +70,19 @@
 			<c:forEach var="tmp" items="${itemList }" step="1" varStatus="status" >
 				<div class="col-6 col-md-4 col-lg-3">
 					<div class="card mb-3">
-						<a href="상품 이미지경로"></a>
-					</div>
-					<div class="card-body">
-						<!-- <a href="상품 간단설명된 이미지 경로"></a>  -->
-						<p>분류 : ${tmp.item_type }</p>
-						<p>no : ${tmp.item_num }</p>
-						<p>${tmp.name }</p>
-						<p>${tmp.detail }</p>
-						<p>${tmp.price } 원</p>
+					<!-- <a href="상품 간단설명된 이미지 경로"></a>  -->
+						<a href="${pageContext.request.contextPath }/items/detail.do">
+							<div class="img-wrapper">
+								<img class="card-img-top" src="${pageContext.request.contextPath }${tmp.imgPath}"/>
+							</div>
+						</a>
+						<div class="card-body">
+							<p>분류 : ${tmp.item_type }</p>
+							<p>no : ${tmp.item_num }</p>
+							<p>${tmp.name }</p>
+							<p>${tmp.detail }</p>
+							<p>${tmp.price } 원</p>
+						</div>		
 					</div>
 				</div>
 			</c:forEach>

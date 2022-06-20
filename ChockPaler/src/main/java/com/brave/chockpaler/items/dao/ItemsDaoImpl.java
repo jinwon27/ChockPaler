@@ -34,6 +34,10 @@ public class ItemsDaoImpl implements ItemsDao {
 		session.selectOne("Items.insert", dto);
 		
 	}
-
+	
+	@Override
+	public void delete(int num) {
+		session.delete("Items.delete", num);
+	}
 
 }

@@ -1,11 +1,14 @@
 package com.brave.chockpaler.items.controller;
 
+import java.lang.ProcessBuilder.Redirect;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.brave.chockpaler.items.dto.ItemsDto;
 import com.brave.chockpaler.items.service.ItemsService;
@@ -16,10 +19,27 @@ public class ItemsController {
 	@Autowired
 	private ItemsService service;
 	
+	//사진 업로드 & db 저장
+	//@RequestMapping(value="/items/upload")
+	//public ModelAndView authUpload(ItemsDto dto, HttpServletRequest request) {
+		
+	//	service.saveImage(dto, request);
+	//	return new ModelAndView("items/upload");
+		
+	//}
+	
+	
+	@RequestMapping("/items/delete")
+	public String delete(ItemsDto dto) {
+		return "redirect:/home.do";
+	}
+	
 	
 	@RequestMapping("/items/upload")
-	public String insert(ItemsDto dto, HttpServletRequest request) {
-		return "items/upload";
+	public ModelAndView insert(ItemsDto dto, HttpServletRequest request) {
+		service.saveImage(dto, request);
+		
+		return new ModelAndView("items/upload");
 	}
 	
 	

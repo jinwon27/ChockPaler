@@ -5,9 +5,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>items/delete.jsp</title>
 </head>
 <body>
+	<script>
+		alert("삭제했습니다");
+		location.href="${pageContext.request.contextPath }/home.do";
+	</script>
 
 </body>
 </html>

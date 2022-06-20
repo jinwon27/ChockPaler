@@ -14,4 +14,6 @@ public interface ItemsDao {
 	public int getCount();
 	
 	public void insert(ItemsDto dto);
+
+	void delete(int num);
 }

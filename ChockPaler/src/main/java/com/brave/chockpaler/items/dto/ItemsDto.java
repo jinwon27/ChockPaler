@@ -1,5 +1,7 @@
 package com.brave.chockpaler.items.dto;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class ItemsDto {
 	
 	private String item_type; //cookie or 멀라 ㅠ
@@ -9,13 +11,14 @@ public class ItemsDto {
 	private int price; // 가격 설정
 	private int starPoint; 
 	private String regdate; 
-	private String img; // 이미지 링크 등록
+	private MultipartFile img; // 이미지 링크 등록
 	private int remain_count; // 재고는 처음에 설정해줘야댐 몇개 있는지
+	private String imgPath;//이미지 저장경로
 	
 	public ItemsDto() {}
 
 	public ItemsDto(String item_type, int item_num, String name, String detail, int price, int starPoint,
-			String regdate, String img, int remain_count) {
+			String regdate, MultipartFile img, int remain_count, String imgPath) {
 		super();
 		this.item_type = item_type;
 		this.item_num = item_num;
@@ -26,6 +29,7 @@ public class ItemsDto {
 		this.regdate = regdate;
 		this.img = img;
 		this.remain_count = remain_count;
+		this.imgPath=imgPath;
 	}
 
 	public String getItem_type() {
@@ -84,11 +88,11 @@ public class ItemsDto {
 		this.regdate = regdate;
 	}
 
-	public String getImg() {
+	public MultipartFile getImg() {
 		return img;
 	}
 
-	public void setImg(String img) {
+	public void setImg(MultipartFile img) {
 		this.img = img;
 	}
 
@@ -99,5 +103,13 @@ public class ItemsDto {
 	public void setRemain_count(int remain_count) {
 		this.remain_count = remain_count;
 	}
+	public String getImgPath() {
+		return imgPath;
+	}
+	public void setImgPath(String imgPath) {
+		this.imgPath=imgPath;
+		
+	}
+
 	
 }
