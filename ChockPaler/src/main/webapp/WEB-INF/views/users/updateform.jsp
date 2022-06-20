@@ -22,6 +22,7 @@
 <body>
 	<div class="container">
 		<h1>가입 정보 수정 폼 입니다.</h1>
+		<!-- 클라이언트에게 이미지를 보여주는 영역 -->
 		<a id="profileLink" href="javascript:">
 			<c:choose>
 				<c:when test="${empty dto.profile }">
@@ -37,6 +38,7 @@
 			</c:choose>
 		</a>
 		<form action="${pageContext.request.contextPath}/users/update.do" method="post">
+			<!-- dto에 넣어줘야 하는 영역 -->
 			<input type="hidden" name="profile" 
 				value="${ empty dto.profile ? '' : dto.profile}"/>
 			<div>

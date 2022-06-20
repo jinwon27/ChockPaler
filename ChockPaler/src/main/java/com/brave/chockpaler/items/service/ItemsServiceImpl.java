@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.brave.chockpaler.items.dao.ItemsDao;
 import com.brave.chockpaler.items.dto.ItemsDto;
+import com.brave.chockpaler.util.pageUtil;
 
 @Service
 public class ItemsServiceImpl implements ItemsService {
@@ -23,6 +24,16 @@ public class ItemsServiceImpl implements ItemsService {
 		
 		return dao.getData(num);
 		
+	}
+
+	@Override
+	public List<ItemsDto> getItemList(pageUtil util) {
+		return dao.getList(util);
+	}
+
+	@Override
+	public int getItemCount() {
+		return dao.getCount();
 	}
 }
 
