@@ -8,6 +8,9 @@
 		li{
 			display: inline-block;
 		}
+		.pagination{
+			justify-content : center;
+		}
 	</style>
 	<title>/home.jsp</title>
 </head>
@@ -18,18 +21,26 @@
 		<!-- Navbar -->
 		<!-- <br /> -->
 		<!-- ${usersDto.name } 님 환영합니다 if(session.id == usersDto.id) -->
-		<c:choose>
-			<c:when test="${ empty sessionScope.id}">
-				<a href="${pageContext.request.contextPath}/users/loginform.do">로그인</a>
-				<a href="${pageContext.request.contextPath}/users/signupform.do">회원가입</a>
-			</c:when>
-			<c:otherwise>
-				<p>
-					${sessionScope.id }님 로그인중... 
-					<a href="${pageContext.request.contextPath}/users/logout.do">로그아웃</a>
-				</p>
-			</c:otherwise>
-		</c:choose>
+		<ul class="nav justify-content-end">
+			<c:choose>
+				<c:when test="${ empty sessionScope.id}">
+					<li class="nav-item">
+						<a class="nav-link active" href="${pageContext.request.contextPath}/users/loginform.do">로그인</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" href="${pageContext.request.contextPath}/users/signupform.do">회원가입</a>
+					</li>
+				</c:when>
+				<c:otherwise>
+					<p>
+						${sessionScope.id }님 로그인중... 
+					</p>
+					<li class="nav-item">
+						<a class="nav-link active" href="${pageContext.request.contextPath}/users/logout.do">로그아웃</a>						
+					</li>
+				</c:otherwise>
+			</c:choose>
+		</ul>
 		<ul class="nav justify-content-end">
 			<li class="nav-item">
 				<a class="nav-link active" href="${pageContext.request.contextPath }/users/info.do">마이페이지</a>
@@ -46,9 +57,9 @@
 		</ul>
 
 		<form action="${pageContext.request.contextPath }/views/items/searchItems.do">
-			<div class="input-group mb-3">
-  				<input type="text" class="form-control" placeholder="검색어를 입력하세요.." aria-label="Recipient's username" aria-describedby="button-addon2">
-  				<button class="btn btn-outline-secondary" type="submit" id="button-addon2">검색</button>
+			<div class="input-group mb-3 input-sm w-25 p-3">
+  				<input type="text" class="form-control input-sm" placeholder="검색어를 입력하세요.." aria-label="Recipient's username" aria-describedby="button-addon2">
+  				<button class="btn btn-outline-success" type="submit" id="button-addon2">검색</button>
 			</div>
 		</form>
 		
@@ -72,18 +83,18 @@
 				</div>
 			</c:forEach>
 		</div>
-		<div id="pageId" align="center">
+		<div id="pageId">
 			<!-- 처음페이지로 이동 : 현재 페이지가 1보다 크면 [처음] 하이퍼링크를 화면에 출력 -->
 			<ul class="pagination">
 				<c:if test="${pageUtil.curBlock > 1}">
 					<li class="page-item">
-						<a class="page-link" href="${pageContext.request.contextPath}/home.do?curPage=1">[처음]</a>
+						<a class="page-link" href="${pageContext.request.contextPath}/home.do?curPage=1">처음</a>
 					</li>
 				</c:if>
 				<!-- 이전페이지 블록으로 이동 : 현재 페이지 블럭이 1보다 크면 [이전] 하이퍼링크를 화면에 출력-->
 				<c:if test="${pageUtil.curBlock > 1 }">
 					<li class="page-item">
-						<a class="page-link" href="${pageContext.request.contextPath}/home.do?curPage=${pageUtil.prevPage}">[이전]</a>
+						<a class="page-link" href="${pageContext.request.contextPath}/home.do?curPage=${pageUtil.prevPage}">이전</a>
 					</li>
 				</c:if>
 				<!-- 하나의 블럭에서 반복문 수행 시작페이지 부터 끝페이지까지 -->
@@ -105,14 +116,14 @@
 				<c:if
 					test="${pageUtil.curBlock <= pageUtil.totBlock }">
 					<li class="page-item">
-						<a class="page-link" href="${pageContext.request.contextPath}/home.do?curPage=${pageUtil.nextPage}">[다음]</a>
+						<a class="page-link" href="${pageContext.request.contextPath}/home.do?curPage=${pageUtil.nextPage}">다음</a>
 					</li>
 				</c:if>
 				<!-- 끝페이지 블록으로 이동 : 현재 페이지가 전체 페이지보다 작거나 같으면 [끝] 하이퍼링크를 화면에 출력-->
 				<c:if
 					test="${pageUtil.curPage < pageUtil.totPage }">
 					<li class="page-item">
-						<a class="page-link" href="${pageContext.request.contextPath}/home.do?curPage=${pageUtil.totPage}">[끝]</a>					
+						<a class="page-link" href="${pageContext.request.contextPath}/home.do?curPage=${pageUtil.totPage}">끝</a>					
 					</li>
 				</c:if>
 			</ul>
