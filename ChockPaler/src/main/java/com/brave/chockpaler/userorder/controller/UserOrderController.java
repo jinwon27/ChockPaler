@@ -13,8 +13,8 @@ public class UserOrderController {
 	@Autowired
 	private UserOrderService service;
 	
-	@RequestMapping("/userorder/userorder")
-	public ModelAndView list(ModelAndView mView) {
+	@RequestMapping("/userorder/userorderform.do")
+	public ModelAndView list(String id, ModelAndView mView) {
 		service.getList(mView);
 		mView.setViewName("userorder/userorder");
 		return mView;

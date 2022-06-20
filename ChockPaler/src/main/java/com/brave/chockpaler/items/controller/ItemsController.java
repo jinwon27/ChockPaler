@@ -34,7 +34,6 @@ public class ItemsController {
 	public String itemInfo(int num, HttpServletRequest request) {
 		
 		ItemsDto dto = service.getItemData(num);
-		
 		// request 영역에 담아줄테니까, iteminfo.jsp 하는 애들아 알아서해 데이터 알아서 잘 뽑아써
 		// 난 요기까지야
 		request.setAttribute("dto", dto);

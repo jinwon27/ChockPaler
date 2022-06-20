@@ -33,7 +33,6 @@ public class UserOrderServiceImpl implements UserOrderService {
 		List<UserOrderDto> list=userorderDao.getList(null);
 		
 		mView.addObject("list", list);
-		
 	}
 	@Transactional
 	@Override

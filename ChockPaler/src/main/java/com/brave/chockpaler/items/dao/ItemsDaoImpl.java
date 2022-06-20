@@ -15,6 +15,6 @@ public class ItemsDaoImpl implements ItemsDao {
 
 	@Override
 	public ItemsDto getData(int num) {
-		return session.selectOne("ItemsMapper.getData", num);
+		return session.selectOne("ItemsMapper.getData", num); // 내가 이래뵈도 ItemDto야 
 	}
 }
