@@ -25,47 +25,70 @@ public class UserOrderServiceImpl implements UserOrderService {
 	
 	@Autowired
 	private UserOrderDao userorderDao;
-	
+
+
 
 	@Override
+<<<<<<< HEAD
+	public void insert(UserOrderDto dto) {
+		userorderDao.insert(dto);		
+=======
 	public void getList(ModelAndView mView) {
 		
 		List<UserOrderDto> list=userorderDao.getList(null);
 		
 		mView.addObject("list", list);
+>>>>>>> branch 'master' of https://github.com/usang0320/ChockPaler.git
 	}
-	@Transactional
-	@Override
-	public void buy(HttpServletRequest request, ModelAndView mView) {
-		
-		String name=(String)request.getSession().getAttribute("name");
-		int item_num=Integer.parseInt(request.getParameter("item_num"));
-	
-		int price=Integer.parseInt(request.getParameter("price"));
 
-		UserOrderDto dto=new UserOrderDto();
+	@Override
+	public List<UserOrderDto> listCart(String id) {
 		
-		dto.setItem_num(item_num);
-		dto.setName(name);
-		dto.setPrice(price);
-		userorderDao.addOrder(dto);
-		userorderDao.getData(dto);
-		
+		return userorderDao.getList(id);
+	}
+
+	@Override
+	public void deleteCart(int NUM) {
+		userorderDao.deleteCart(NUM);
 		
 	}
 
 	@Override
-	public void cancel(HttpServletRequest request, ModelAndView mView) {
-		int item_num=Integer.parseInt(request.getParameter("item_num"));
-		UserOrderDto dto=new UserOrderDto();
-		dto.setItem_num(item_num);
-		userorderDao.delete(dto);
+	public void deleteAll(String id) {
+		userorderDao.deleteAll(id);
+		
+	}
+
+	@Override
+	public void update(int NUM) {
+		
+		userorderDao.update(NUM);
+	}
+
+	@Override
+	public int sumPrice(String id) {
+		
+		return userorderDao.sumPrice(id);
+	}
+
+	@Override
+	public void updateCart(UserOrderDto dto) {
+		userorderDao.updateCart(dto);
+		
+	}
+
+	@Override
+	public void modifyCart(UserOrderDto dto) {
+		userorderDao.modifyCart(dto);
 		
 	}
 	
+	@Override
+	public List<UserOrderDto> cartPrice() {
+		// TODO Auto-generated method stub
+		return userorderDao.cartPrice();
+	}
 
-	
-		
 	
 
 }
