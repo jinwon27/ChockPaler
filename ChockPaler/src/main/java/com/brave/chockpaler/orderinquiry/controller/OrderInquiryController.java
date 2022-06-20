@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.brave.chockpaler.orderinquiry.service.OrderInquiryService;
 
@@ -16,10 +17,11 @@ public class OrderInquiryController {
 	OrderInquiryService service;
 	
 	@RequestMapping("/orderinquiry/orderinquiry")
-	public String OrderInquiryList(HttpSession session, HttpServletRequest request) {
+	public ModelAndView authOrderInquiryList(HttpSession session, HttpServletRequest request,
+			ModelAndView mView) {
 		
-		request.setAttribute("dto", service.getDto((String)session.getAttribute("id")));
-		return "orderinquiry/list";	
-		
+		mView.addObject("dto", service.getDto((String)session.getAttribute("id")));
+		mView.setViewName("orderinquiry/list");
+		return mView;
 	}
 }
