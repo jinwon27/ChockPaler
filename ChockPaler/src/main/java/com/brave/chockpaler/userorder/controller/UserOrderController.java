@@ -22,7 +22,6 @@ public class UserOrderController {
 	@Autowired
 	private UserOrderService service;
 	
-<<<<<<< HEAD
 	@RequestMapping("insert.do")
 	public String insert(@ModelAttribute UserOrderDto dto,HttpSession session) {
 		String id=(String)session.getAttribute("id");
@@ -32,13 +31,13 @@ public class UserOrderController {
 		dto.setId(id);
 		service.insert(dto);
 		return "redirect:/userorder/userodrderform.do";
-=======
+	}
+		
 	@RequestMapping("/userorder/userorderform.do")
 	public ModelAndView list(String id, ModelAndView mView) {
 		service.getList(mView);
 		mView.setViewName("userorder/userorder");
 		return mView;
->>>>>>> branch 'master' of https://github.com/usang0320/ChockPaler.git
 	}
 	
 	@RequestMapping("userorderform.do")

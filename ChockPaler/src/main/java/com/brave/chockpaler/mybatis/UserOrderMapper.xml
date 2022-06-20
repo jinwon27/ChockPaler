@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="userorder">
-<<<<<<< HEAD
 	<insert id="insert" parameterType="userorderDto">
 		INSERT INTO ORDER_VIEW (id, NUM, name, count)
 		VALUES(seq_orderview.nextval,#{id},#{NUM},#{name},#{count})
-		
-=======
+	</insert>
 	<select id="getList" parameterType="String" resultType="userorderDto">
 		SELECT item_num,name,price,item_type,img
 		FROM items
@@ -16,7 +14,6 @@
 		INSERT INTO items
 		(item_num, item_type, name, price )
 		VALUES(items_seq.nextval),#{item_num},#{item_type},#{name},#{price})
->>>>>>> branch 'master' of https://github.com/usang0320/ChockPaler.git
 	</insert>
 	<select  id="list" resultType="userorderDto">
 	select NUM,name,id,item,count,price
