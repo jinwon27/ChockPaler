@@ -30,13 +30,15 @@ public class UserOrderServiceImpl implements UserOrderService {
 
 	@Override
 	public void insert(UserOrderDto dto) {
-		userorderDao.insert(dto);		
+		userorderDao.insert(dto);				
 	}
+	
 	public void getList(ModelAndView mView) {
 		
 		List<UserOrderDto> list=userorderDao.getList(null);
 		
 		mView.addObject("list", list);
+
 	}
 
 	@Override

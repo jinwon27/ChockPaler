@@ -14,5 +14,6 @@
 		<mapper resource="com/brave/chockpaler/mybatis/UsersMapper.xml"/>
 		<mapper resource="com/brave/chockpaler/mybatis/UserOrderMapper.xml"/>
 		<mapper resource="com/brave/chockpaler/mybatis/ItemsMapper.xml"/>
+		<mapper resource="com/brave/chockpaler/mybatis/OrderInquiryMapper.xml"/>
 	</mappers>
  </configuration> 

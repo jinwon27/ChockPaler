@@ -31,7 +31,7 @@
 
 	<a href="${pageContext.request.contextPath }/users/info.do">마이페이지</a>
 	<a href="${pageContext.request.contextPath }/userorder/userorderform.do?name=${dto.id }">장바구니</a>
-	<a href="${pageContext.request.contextPath }/shop/orderinquiry.do">주문배송조회</a>
+	<a href="${pageContext.request.contextPath }/orderinquiry/orderinquiry.do?id=${id }">주문배송조회</a>
 	<a href="${pageContext.request.contextPath }/items/uploadform.do">자, 신상 팔아볼까?</a>
 
 	<br />
