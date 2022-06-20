@@ -34,13 +34,8 @@ public class ItemsDaoImpl implements ItemsDao {
 		session.selectOne("Items.insert", dto);
 		
 	}
-<<<<<<< HEAD
-	
 	@Override
 	public void delete(int num) {
 		session.delete("Items.delete", num);
 	}
-
-=======
->>>>>>> branch 'master' of https://github.com/usang0320/ChockPaler.git
 }

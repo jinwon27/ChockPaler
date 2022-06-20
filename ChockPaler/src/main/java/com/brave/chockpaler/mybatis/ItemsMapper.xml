@@ -3,13 +3,9 @@
 <mapper namespace="Items">
 	<insert id="insert" parameterType="itemsDto">
 		INSERT INTO items
-<<<<<<< HEAD
 		(item_type, name, detail, price, img, imgPath remain_count)
 		VALUES (seq_items.NEXTVAL,#{item_type},#{name},#{detail},#{price},#{img},#{imgPath},#{remain_count})
-=======
-		(item_num, item_type, name, detail, price, img, remain_count)
-		VALUES(items_seq.NEXTVAL, #{item_type}, #{name}, #{detail}, #{price}, #{img}, #{remain_count})
->>>>>>> branch 'master' of https://github.com/usang0320/ChockPaler.git
+
 	</insert>
 
 	<select id="getData" resultType="itemsDto" parameterType="int">
