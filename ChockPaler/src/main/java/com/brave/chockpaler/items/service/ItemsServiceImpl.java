@@ -21,7 +21,9 @@ public class ItemsServiceImpl implements ItemsService {
 
 	@Override
 	public ItemsDto getItemData(int num) {
+		
 		return dao.getData(num);
+		
 	}
 
 	@Override
