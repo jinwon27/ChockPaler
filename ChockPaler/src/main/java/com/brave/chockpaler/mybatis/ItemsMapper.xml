@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ItemsMapper">
+	<select id="getData" resultType="com.brave.chockpaler.items.dto.ItemsDto" parameterType="int">
+		SELECT * FROM items
+		WHERE num = #{num }
+	</select>
+	
+	<select id="getList" resultType="com.brave.chockpaler.items.dto.ItemsDto" parameterType="com.brave.chockpaler.util.pageUtil">
+		SELECT *
+		FROM
+			(SELECT result1.*, ROWNUM AS rnum
+			FROM
+				(SELECT item_type, item_num, name, detail, price, regdate, remain_count
+					FROM items
+					ORDER BY item_num DESC) result1)
+		WHERE rnum BETWEEN #{pageBegin} AND #{pageEnd}
+	</select>
+	
+	<select id="getItemCount" resultType="int">
+		SELECT COUNT(*) FROM
+		items
+	</select>
+</mapper>

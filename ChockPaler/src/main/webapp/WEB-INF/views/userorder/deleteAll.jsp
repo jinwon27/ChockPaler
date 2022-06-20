@@ -5,12 +5,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>/views/userorder/userorderBuy</title>
+<title>Insert title here</title>
 </head>
 <body>
 	<script>
-		alert("주문 완료했습니다.");
-		location.href = "${pageContext.request.contextPath}/userorder/userorder.do";
+		alert("모두 삭제하였습니다.");
+		location.href="${pageContext.request.contextPath }/userorder/userorderform"
 	</script>
 </body>
 </html>

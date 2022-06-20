@@ -23,7 +23,6 @@
 		<h1>마이페이지</h1>
 		<table>
 			<tr>
-				<th></th>
 				<td>
 				<c:choose>
 					<c:when test="${empty dto.profile }">
@@ -75,6 +74,7 @@
 	<script>
 		function deleteConfirm(){
 			const isDelete=confirm("${id} 님 탈퇴 하시겠습니까?");
+			console.log(isDelete);
 			if(isDelete){
 				location.href="${pageContext.request.contextPath}/users/delete.do";
 			}

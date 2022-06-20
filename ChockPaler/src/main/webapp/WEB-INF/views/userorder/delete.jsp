@@ -9,8 +9,8 @@
 </head>
 <body>
 	<script>
-		alert("주문 취소했습니다.");
-		location.href = "${pageContext.request.contextPath}/userorder/userorder.do";
+		alert("삭제하였습니다.");
+		location.href="${pageContext.request.contextPath }/userorder/userorderform"
 	</script>
 </body>
 </html>

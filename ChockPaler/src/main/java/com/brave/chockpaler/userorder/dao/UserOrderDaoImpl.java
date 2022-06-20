@@ -16,30 +16,70 @@ public class UserOrderDaoImpl implements UserOrderDao{
 	@Autowired
 	private SqlSession session;
 
+
+
+	@Override
+	public void insert(UserOrderDto dto) {
+		session.insert("userorder.insert",dto);
+		
+	}
+
 	@Override
 	public List<UserOrderDto> getList(String id) {
-		
-		return session.selectList("userorder.getList", id);
+		// TODO Auto-generated method stub
+		return session.selectList("userorder.listOrder", id);
 	}
 
 	@Override
-	public int addCart(UserOrderDto dto) {
+	public void deleteCart(int NUM) {
+		session.delete("userorder.delete", NUM);
 		
-		return session.insert("userorder.insert", dto);
 	}
 
 	@Override
-	public int deleteCart(int num) {
+	public void deleteAll(String id) {
+		session.delete("userorder.deleteall", id);
 		
-		return session.delete("userorder.delete", num);
 	}
 
 	@Override
-	public int countCart(UserOrderDto dto) {
-		
-		return session.selectOne("userorder.count", dto);
+	public int countCart(String id, int count) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
+	@Override
+	public int sumPrice(String id) {
+		
+		return session.selectOne("userorder.sumPrice", id);
+	}
+
+	@Override
+	public void updateCart(UserOrderDto dto) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	
+	@Override
+	public List<UserOrderDto> cartPrice() {
+		
+		return null;
+	}
+
+	@Override
+	public void update(int NUM) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void modifyCart(UserOrderDto dto) {
+		 session.update("userorder.modify", dto);
+		
+	}
+	
 	
 	
 
