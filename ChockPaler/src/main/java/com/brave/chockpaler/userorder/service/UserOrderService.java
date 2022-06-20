@@ -20,4 +20,5 @@ public interface UserOrderService {
 	public int sumPrice(String id);
 	public void updateCart(UserOrderDto dto);
 	public void modifyCart(UserOrderDto dto);
+	public void getList(ModelAndView mView);
 }
