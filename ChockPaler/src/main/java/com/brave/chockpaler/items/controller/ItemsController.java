@@ -18,17 +18,24 @@ public class ItemsController {
 	@Autowired
 	private ItemsService service;
 	
+	
+	@RequestMapping("/items/upload")
+	public String insert(ItemsDto dto, HttpServletRequest request) {
+		return "items/upload";
+	}
+	
+	
 	@RequestMapping("/items/uploadform")
 	public String uploadForm(HttpServletRequest request) {
 		return "items/uploadform";
 	}
 	
-	@RequestMapping("/items/upload.do")
-	public String upload(@RequestParam ItemsDto dto) {
+	//@RequestMapping("/items/upload.do")
+	//public String upload(@RequestParam ItemsDto dto) {
 		// 폼으로 전송된 데이터를 디비에 인설트(저장) 하기
 		//service.saveItems(dto);
-		return "items/upload";
-	}
+		//eturn "items/upload";
+	//}
 	
 	@RequestMapping("/items/iteminfo")
 	public String itemInfo(int num, HttpServletRequest request) {

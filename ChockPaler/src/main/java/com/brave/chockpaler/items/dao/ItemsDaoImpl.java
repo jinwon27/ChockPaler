@@ -16,16 +16,24 @@ public class ItemsDaoImpl implements ItemsDao {
 
 	@Override
 	public ItemsDto getData(int num) {
-		return session.selectOne("ItemsMapper.getData", num); // 내가 이래뵈도 ItemDto야 
+		return session.selectOne("Items.getData", num); // 내가 이래뵈도 ItemDto야 
 	}
 
 	@Override
 	public List<ItemsDto> getList(pageUtil util) {
-		return session.selectList("ItemsMapper.getList", util);
+		return session.selectList("Items.getList", util);
 	}
 
 	@Override
 	public int getCount() {
-		return session.selectOne("ItemsMapper.getItemCount");
+		return session.selectOne("Items.getItemCount");
 	}
+
+	@Override
+	public void insert(ItemsDto dto) {
+		session.selectOne("Items.insert", dto);
+		
+	}
+
+
 }

@@ -10,7 +10,7 @@
 <body>
 	<script>
 		alert("doenrok.");
-		location.href = "${pageContext.request.contextPath }/home.jsp";
+		location.href = "${pageContext.request.contextPath }/home.do";
 	</script>
 </body>
 </html>
