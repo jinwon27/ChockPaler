@@ -8,7 +8,6 @@
 <title>/views/userorder/userorder.jsp</title>
 </head>
 <body>
-
 	<h1>장바구니</h1>
 	
 	<div class="container">

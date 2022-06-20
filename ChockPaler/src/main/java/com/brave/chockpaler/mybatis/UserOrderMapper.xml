@@ -1,29 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="userorder">
-	<select id="getList" resultType="userorderDto">
-		SELECT item_num,name,price,item_type,img
-		FROM items
-		ORDER BY item_num ASC
-	</select>
-	<insert id="addOrder" parameterType="userorderDto">
-		INSERT INTO items
-		(item_num, item_type, name, price )
-		VALUES(items_seq.nextval),#{item_num},#{item_type},#{name},#{price})
+
+	<insert id="insert" parameterType="userorderDto">
+		INSERT INTO ORDER_VIEW (id, NUM, name, count)
+		VALUES(seq_orderview.nextval,#{id},#{NUM},#{name},#{count})
 	</insert>
-	<select id="getPrice" parameterType="int" resultType="int">
-		SELECT price
-		FROM items
-		WHERE item_num=#{item_num}
+
+	<select  id="list" resultType="userorderDto">
+	select NUM,name,id,item,count,price
+	from ORDER_VIEW
+	WHERE id=#{id} and NUM=#{NUM} and name=#{name}
+	ORDER BY NUM
 	</select>
+	
+	<select  id="sumPrice" resultType="int">
+		SELECT sum(price*count)
+		FROM ORDER_VIEW
+		WHERE id=#{id}
+	</select>
+	
 	<delete id="delete">
-		DELETE FROM items 
-		WHERE item_num=#{item_num}
+		DELETE FROM ORDER_VIEW
+		WHERE NUM=#{NUM}
+		 
 	</delete>
-	<select id="getData">
-		SELECT item_num, name,price,item_type
-		FROM items
-		WHERE item_num=#{item_num}
-		ORDER BY item_num ASC
+	
+	<delete id="deleteAll">
+		DELETE FROM ORDER_VIEW 
+		WHERE id=#{id}
+	</delete>
+	
+
+	<update id="modifyCart">
+		UPDATE ORDER_VIEW
+		SET count=#{count}
+		WHERE id=#{id} and name=#{name}
+	</update>
+	
+	<select id="countCart" resultType="int">
+	SELECT count(*)
+	FROM ORDER_VIEW
+	WHERE id=#{id}
+	AND name=#{name}
 	</select>
+	
+	<update id="updateCart">
+	UPDATE ORDER_VIEW
+	SET count= count+#{count}
+	WHERE id=#{id}
+	AND name=#{name}
+	
+	</update>
 </mapper>
