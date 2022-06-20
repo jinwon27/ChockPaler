@@ -130,7 +130,7 @@
 		</div>
 	</div>
 	<!-- 웹 하단부 info -->
-	
+	<%@include file="./include/footer.jsp" %>
 </body>
 </html>
 
