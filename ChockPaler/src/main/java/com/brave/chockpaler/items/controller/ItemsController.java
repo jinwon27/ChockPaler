@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -20,27 +21,18 @@ public class ItemsController {
 	private ItemsService service;
 	
 	//사진 업로드 & db 저장
-	//@RequestMapping(value="/items/upload")
-	//public ModelAndView authUpload(ItemsDto dto, HttpServletRequest request) {
-		
-	//	service.saveImage(dto, request);
-	//	return new ModelAndView("items/upload");
-		
-	//}
+//	@RequestMapping(value="/items/upload")
+//	public ModelAndView authUpload(ItemsDto dto, HttpServletRequest request) {
+//		
+//		service.saveImage(dto, request);
+//		return new ModelAndView("items/upload");
+//		
+//	}
 	
-	
+	//아이템 삭제하기
 	@RequestMapping("/items/delete")
 	public String delete(ItemsDto dto) {
 		return "redirect:/home.do";
-	}
-	
-	
-	@RequestMapping("/items/upload")
-
-	public ModelAndView insert(ItemsDto dto, HttpServletRequest request) {
-		service.saveImage(dto, request);
-		
-		return new ModelAndView("items/upload");
 	}
 	
 	
@@ -49,12 +41,12 @@ public class ItemsController {
 		return "items/uploadform";
 	}
 	
-	//@RequestMapping("/items/upload.do")
-	//public String upload(@RequestParam ItemsDto dto) {
+	@RequestMapping("/items/upload")
+	public String upload(ItemsDto dto) {
 		// 폼으로 전송된 데이터를 디비에 인설트(저장) 하기
-		//service.saveItems(dto);
-		//eturn "items/upload";
-	//}
+		service.insert(dto);
+		return "items/upload";
+	}
 	
 	@RequestMapping("/items/iteminfo")
 	public String itemInfo(int num, HttpServletRequest request) {

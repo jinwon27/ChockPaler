@@ -2,6 +2,8 @@ package com.brave.chockpaler.items.dao;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import com.brave.chockpaler.items.dto.ItemsDto;
 import com.brave.chockpaler.util.pageUtil;
 
@@ -15,5 +17,5 @@ public interface ItemsDao {
 	
 	public void insert(ItemsDto dto);
 
-	void delete(int num);
+	public void delete(int num);
 }

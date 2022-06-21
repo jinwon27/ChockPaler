@@ -31,7 +31,8 @@ public class ItemsDaoImpl implements ItemsDao {
 
 	@Override
 	public void insert(ItemsDto dto) {
-		session.selectOne("Items.insert", dto);
+		session.insert("Items.insert", dto);
+
 		
 	}
 	@Override
