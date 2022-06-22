@@ -10,7 +10,7 @@
 <body>
 	<div class="container">
 		<!-- 정보들이  출력되는곳-->
-		<form action="">
+		<form action=""> <!-- 장바구니 페이지로 보내줄 컨트롤러에 매핑할 주소 -->
 			<label for="name">상품명</label>
 			<input type="text" id="name" value="${dto.name }"/>
 			<br />

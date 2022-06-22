@@ -9,7 +9,7 @@
 
 	<select id="getData" resultType="itemsDto" parameterType="int">
 		SELECT * FROM items
-		WHERE num = #{num }
+		WHERE item_num = #{num }
 	</select>
 	
 	<select id="getList" resultType="itemsDto" parameterType="com.brave.chockpaler.util.pageUtil">
