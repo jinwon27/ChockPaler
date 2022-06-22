@@ -111,19 +111,26 @@
 		  </div>
 		</nav>
 		
-		<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+		<div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
+			<div class="carousel-indicators">
+				<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+				<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+				<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+				<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+			</div>
+			
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-		      		<img src="${pageContext.request.contextPath }/images/1.jpg" class="d-block w-100" width="600" height="400">
+		      		<img src="${pageContext.request.contextPath }/images/1.jpg" class="d-block w-100" width="600" height="600">
 		    	</div>
 		    	<div class="carousel-item">
-		      		<img src="${pageContext.request.contextPath }/images/2.jpg" class="d-block w-100" width="600" height="400">
+		      		<img src="${pageContext.request.contextPath }/images/2.jpg" class="d-block w-100" width="600" height="600">
 		    	</div>
 			    <div class="carousel-item">
-			      	<img src="${pageContext.request.contextPath }/images/3.jpg" class="d-block w-100" width="600" height="400">
+			      	<img src="${pageContext.request.contextPath }/images/3.jpg" class="d-block w-100" width="600" height="600">
 			    </div>
 			    <div class="carousel-item">
-			      	<img src="${pageContext.request.contextPath }/images/4.jpg" class="d-block w-100" width="600" height="400">
+			      	<img src="${pageContext.request.contextPath }/images/4.jpg" class="d-block w-100" width="600" height="600">
 			    </div>
 			</div>
 			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
