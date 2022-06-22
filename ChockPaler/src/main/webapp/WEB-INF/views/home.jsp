@@ -117,7 +117,7 @@
 					<!-- <a href="상품 간단설명된 이미지 경로"></a>  -->
 						<a href="${pageContext.request.contextPath }/items/detail.do">
 							<div class="img-wrapper">
-								<img class="card-img-top" src=""/>
+								<img class="card-img-top" src="${pageContext.request.contextPath }${tmp.img}"/>
 							</div>
 						</a>
 						<div class="card-body">

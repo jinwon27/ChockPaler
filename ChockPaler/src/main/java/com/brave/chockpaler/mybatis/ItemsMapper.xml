@@ -4,7 +4,7 @@
 	<insert id="insert" parameterType="itemsDto">
 		INSERT INTO items
 		(item_num, item_type, name, detail, price, img, remain_count)
-		VALUES (items_seq.NEXTVAL,#{item_type},#{name},#{detail},#{price}, '', #{remain_count})
+		VALUES (items_seq.NEXTVAL,#{item_type},#{name},#{detail},#{price}, #{img}, #{remain_count})
 	</insert>
 
 	<select id="getData" resultType="itemsDto" parameterType="int">
@@ -17,7 +17,7 @@
 		FROM
 			(SELECT result1.*, ROWNUM AS rnum
 			FROM
-				(SELECT item_type, item_num, name, detail, price, regdate, remain_count
+				(SELECT item_type, item_num, name, detail, img, price, regdate, remain_count
 					FROM items
 					ORDER BY item_num DESC) result1)
 		WHERE rnum BETWEEN #{pageBegin} AND #{pageEnd}

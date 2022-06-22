@@ -76,9 +76,38 @@ public class ItemsServiceImpl implements ItemsService {
 //	}
 
 	@Override
-	public void insert(ItemsDto dto) {
-		dao.insert(dto);
+	public void insert(ItemsDto dto, HttpServletRequest request) {
 		
+		//업로드된 파일의 정보를 가지고 있는 MultipartFile 객체의 참조값을 얻어오기
+		MultipartFile image = dto.getmImg(); // form 에 <input type="file"> 인 부분에 대한 참조값을 담는부분
+		//원본 파일명 -> 저장할 파일 이름 만들기위해서 사용됨
+		String orgFileName = image.getOriginalFilename();
+				
+		// webapp/upload 폴더 까지의 실제 경로(서버의 파일 시스템 상에서의 경로)
+		String realPath = request.getServletContext().getRealPath("/upload");
+		//db 에 저장할 저장할 파일의 상세 경로
+		String filePath = realPath + File.separator;
+		//디렉토리를 만들 파일 객체 생성
+		File upload = new File(filePath);
+		if(!upload.exists()) {
+			//만약 디렉토리가 존재하지X
+			upload.mkdir();//폴더 생성
+		}
+		//저장할 파일의 이름을 구성한다. -> 우리가 직접 구성해줘야한다.
+		String saveFileName = System.currentTimeMillis() + orgFileName;
+				
+		try {
+			//upload 폴더에 파일을 저장한다.
+			image.transferTo(new File(filePath + saveFileName));
+			System.out.println();	//임시 출력
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		dto.setImg("/upload/" + saveFileName);
+				
+		//GalleryDao 를 이용해서 DB 에 저장하기
+		dao.insert(dto);
 	}
 
 }
