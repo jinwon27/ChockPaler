@@ -23,11 +23,11 @@
 <body>
 	
 	<div class="container">
-		<h1 class="text-center"> 프로젝트 페이지 </h1>
+		<%@include file="/WEB-INF/views/include/header.jsp" %>
 		<!-- Navbar -->
 		<!-- <br /> -->
 		<!-- ${usersDto.name } 님 환영합니다 if(session.id == usersDto.id) -->
-		<ul class="nav justify-content-end">
+		<!-- <ul class="nav justify-content-end">
 			<c:choose>
 				<c:when test="${ empty sessionScope.id}">
 					<li class="nav-item">
@@ -68,7 +68,7 @@
   				<button class="btn btn-outline-success" type="submit" id="button-addon2">검색</button>
 			</div>
 		</form>
-		
+		-->
 		<!-- navbar영역 -->
 		<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
 		  <div class="container-fluid">
@@ -103,10 +103,12 @@
 		          <a class="nav-link" href="#">Event</a>
 		        </li>
 		      </ul>
+		      <!-- 
 		      <form class="d-flex" role="search">
 		        <input class="form-control me-2" type="search" placeholder="검색어 입력..." aria-label="Search">
 		        <button class="btn btn-outline-success" type="submit">search</button>
 		      </form>
+		      -->
 		    </div>
 		  </div>
 		</nav>
