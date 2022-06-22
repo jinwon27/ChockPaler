@@ -13,7 +13,14 @@
 		.pagination{
 			justify-content : center;
 		}
+		.card{
+   			animation-duration : 0.6s; 
+		}
 	</style>
+	<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 	<title>/home.jsp</title>
 </head>
 <body>
@@ -113,7 +120,7 @@
 		<div class="row">
 			<c:forEach var="tmp" items="${itemList }" step="1" varStatus="status" >
 				<div class="col-6 col-md-4 col-lg-3">
-					<div class="card mb-3">
+					<div class="card mb-3 animate__animated animate__fadeIn" id="itemsDiv">
 					<!-- <a href="상품 간단설명된 이미지 경로"></a>  -->
 						<a href="${pageContext.request.contextPath }/items/detail.do">
 							<div class="img-wrapper">
