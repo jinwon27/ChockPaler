@@ -11,6 +11,7 @@
 	<div class="container">
 		<!-- 정보들이  출력되는곳-->
 		<form action=""> <!-- 장바구니 페이지로 보내줄 컨트롤러에 매핑할 주소 -->
+		<!-- 여기 마무리 하겠습니다 -->
 			<label for="name">상품명</label>
 			<input type="text" id="name" value="${dto.name }"/>
 			<br />
