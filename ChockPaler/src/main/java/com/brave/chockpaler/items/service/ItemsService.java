@@ -15,7 +15,7 @@ public interface ItemsService {
 	
 	public int getItemCount();
 
-	public void insert(ItemsDto dto);
+	public void insert(ItemsDto dto, HttpServletRequest request);
 	
 	public void delete(int num);
 	//이미지 upload & DB 저장하기

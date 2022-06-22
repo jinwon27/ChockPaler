@@ -41,11 +41,11 @@ public class ItemsController {
 		return "items/uploadform";
 	}
 	
-	@RequestMapping("/items/upload")
-	public String upload(ItemsDto dto) {
+	@RequestMapping(value = "/items/upload")
+	public ModelAndView upload(ItemsDto dto, HttpServletRequest request) {
 		// 폼으로 전송된 데이터를 디비에 인설트(저장) 하기
-		service.insert(dto);
-		return "items/upload";
+		service.insert(dto, request);
+		return new ModelAndView("items/upload");
 	}
 	
 	@RequestMapping("/items/iteminfo")

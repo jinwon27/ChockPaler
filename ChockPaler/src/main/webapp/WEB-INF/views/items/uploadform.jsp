@@ -11,7 +11,7 @@
 <body>
 	<div class="container">
 		<div class="mb-3">
-			<form action="${pageContext.request.contextPath }/items/upload.do">
+			<form action="${pageContext.request.contextPath }/items/upload.do" method="post" enctype="multipart/form-data">
 				<label for="type" class="form-label">타입</label>
 				<select class="form-select" name="item_type" id="type">
 					<option value="">선택</option>
@@ -28,8 +28,8 @@
 				<label class="form-label" for="price">price</label>
 				<input type="text" class="form-control" id="price" name="price" placeholder="가격 입력..." /> 원
 				<br />
-				<label class="form-label" for="img">이미지</label>
-				<input type="file" class="form-control" name="img" id="img"
+				<label class="form-label" for="mImg">이미지</label>
+				<input type="file" class="form-control" name="mImg" id="mImg"
 		            	accept=".jpg, .jpeg, .png, .JPG, .JPEG"/>
 				<br />
 				<label class="form-label" for="remain_count">재고</label>
