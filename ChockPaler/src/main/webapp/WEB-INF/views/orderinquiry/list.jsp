@@ -12,6 +12,7 @@
 		visibility: hidden;
 	}
 </style>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.css" />
 <body>
 	<div class="container">
 		<c:choose>
@@ -27,5 +28,7 @@
 			</c:otherwise>
 		</c:choose>
 	</div>
+	<!-- 웹 하단부 info -->
+	<%@include file="/WEB-INF/views/include/footer.jsp" %>
 </body>
 </html>
