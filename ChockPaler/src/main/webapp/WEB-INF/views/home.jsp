@@ -87,7 +87,7 @@
 		          <a class="nav-link" href="#">공지사항</a>
 		        </li>
 		        <li class="nav-item">
-		          <a class="nav-link" href="${pageContext.request.contextPath }/items/iteminfo.do">쿠키</a>
+		          <a class="nav-link" href="${pageContext.request.contextPath }/home.do?item_type=cookie">쿠키</a>
 		        </li>
 		        <li class="nav-item dropdown">
 		          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

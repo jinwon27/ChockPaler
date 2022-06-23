@@ -68,16 +68,36 @@
         </form>
 
         <div class="dropdown text-end">
-          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-          </a>
-          <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-            <li><a class="dropdown-item" href="${pageContext.request.contextPath }/items/uploadform.do">상품등록</a></li>
-            <li><a class="dropdown-item" href="${pageContext.request.contextPath }/users/info.do">MyPage</a></li>
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="${pageContext.request.contextPath }/users/logout.do">로그아웃</a></li>
-          </ul>
+        	<c:choose>
+        		<c:when test="${ empty sessionScope.id}">
+					<a href="${pageContext.request.contextPath }/users/login.do" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+						<img src="" alt="mdo" width="32" height="32" class="rounded-circle">
+					</a>
+        		</c:when>
+        		<c:otherwise>
+        			<a href="${pageContext.request.contextPath }/users/info.do" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+						<!-- users 태이블에 프로필 사진 경로 src에 담기 -->
+						<img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+					</a>
+        		</c:otherwise>
+        	</c:choose>
+			<ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+				<c:choose>
+					<c:when test="${ empty sessionScope.id}">
+						<li><a class="dropdown-item" href="${pageContext.request.contextPath }/users/login.do">로그인</a></li>
+						<li><a class="dropdown-item" href="${pageContext.request.contextPath }/orderinquiry/??.do">장바구니</a></li>
+					</c:when>
+					<c:otherwise>
+						<p>
+							${sessionScope.id } 님 환영합니다
+						</p>
+						<li><a class="dropdown-item" href="${pageContext.request.contextPath }/items/uploadform.do">상품등록</a></li>
+						<li><a class="dropdown-item" href="${pageContext.request.contextPath }/users/info.do">MyPage</a></li>
+						<li><hr class="dropdown-divider"></li>
+						<li><a class="dropdown-item" href="${pageContext.request.contextPath }/users/logout.do">로그아웃</a></li>
+					</c:otherwise>
+				</c:choose>
+			</ul>
         </div>
       </div>
     </div>
