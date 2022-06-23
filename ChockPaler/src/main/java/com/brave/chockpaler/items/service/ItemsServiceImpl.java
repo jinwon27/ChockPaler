@@ -1,7 +1,9 @@
 package com.brave.chockpaler.items.service;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -29,8 +31,11 @@ public class ItemsServiceImpl implements ItemsService {
 	}
 
 	@Override
-	public List<ItemsDto> getItemList(pageUtil util) {
-		return dao.getList(util);
+	public List<ItemsDto> getItemList(pageUtil pUtil, String item_type) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("pUtil", pUtil);
+		map.put("item_type", item_type);
+		return dao.getList(map);
 	}
 
 	@Override

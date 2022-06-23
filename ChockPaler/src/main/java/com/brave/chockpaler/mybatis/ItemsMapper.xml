@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Items">
+	<sql id="searchCondition">
+		<choose>
+			<when test="item_type == ''">
+				WHERE 1=1
+			</when>
+			<when test="item_type == 'cookie'">
+				WHERE item_type = 'cookie'
+			</when>
+			<when test="item_type == 'beverage'">
+				WHERE item_type = 'beverage'
+			</when>
+		</choose>
+	</sql>
+	
 	<insert id="insert" parameterType="itemsDto">
 		INSERT INTO items
 		(item_num, item_type, name, detail, price, img, remain_count)
@@ -12,15 +26,16 @@
 		WHERE item_num = #{num }
 	</select>
 	
-	<select id="getList" resultType="itemsDto" parameterType="com.brave.chockpaler.util.pageUtil">
+	<select id="getList" resultType="itemsDto" parameterType="Map">
 		SELECT *
 		FROM
 			(SELECT result1.*, ROWNUM AS rnum
 			FROM
 				(SELECT item_type, item_num, name, detail, img, price, regdate, remain_count
-					FROM items
-					ORDER BY item_num DESC) result1)
-		WHERE rnum BETWEEN #{pageBegin} AND #{pageEnd}
+				FROM items
+				<include refid="searchCondition"/>
+				ORDER BY item_num DESC) result1)
+		WHERE rnum BETWEEN #{pUtil.pageBegin} AND #{pUtil.pageEnd}
 	</select>
 	
 	<select id="getItemCount" resultType="int">

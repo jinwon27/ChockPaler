@@ -1,6 +1,7 @@
 package com.brave.chockpaler.items.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -11,7 +12,7 @@ public interface ItemsDao {
 	
 	public ItemsDto getData(int num);
 	
-	public List<ItemsDto> getList(pageUtil util);
+	public List<ItemsDto> getList(Map<String, Object> map);
 	
 	public int getCount();
 	

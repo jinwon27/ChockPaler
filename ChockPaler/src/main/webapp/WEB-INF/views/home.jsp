@@ -89,16 +89,21 @@
 		        <li class="nav-item">
 		          <a class="nav-link" href="${pageContext.request.contextPath }/home.do?item_type=cookie">쿠키</a>
 		        </li>
-		        <li class="nav-item dropdown">
-		          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-		          	음료
-		          </a>
-		          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-		            <li><a class="dropdown-item" href="#">커피</a></li>
-		            <br />
-		            <li><a class="dropdown-item" href="#">에이드</a></li>
-		          </ul>
+		        <li class="nav-item">
+		          <a class="nav-link" href="${pageContext.request.contextPath }/home.do?item_type=beverage">음료</a>
 		        </li>
+		        <!-- 
+		        	<li class="nav-item dropdown">
+			          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+			          	음료
+			          </a>
+			          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+			            <li><a class="dropdown-item" href="#">커피</a></li>
+			            <br />
+			            <li><a class="dropdown-item" href="#">에이드</a></li>
+			          </ul>
+			        </li>
+		         -->
 		        <li class="nav-item">
 		          <a class="nav-link" href="#">Event</a>
 		        </li>
