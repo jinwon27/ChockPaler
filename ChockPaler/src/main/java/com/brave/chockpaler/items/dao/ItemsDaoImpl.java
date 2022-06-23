@@ -1,6 +1,8 @@
 package com.brave.chockpaler.items.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +22,9 @@ public class ItemsDaoImpl implements ItemsDao {
 	}
 
 	@Override
-	public List<ItemsDto> getList(pageUtil util) {
-		return session.selectList("Items.getList", util);
+	public List<ItemsDto> getList(Map<String, Object> map) {
+		
+		return session.selectList("Items.getList", map);
 	}
 
 	@Override
