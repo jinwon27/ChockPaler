@@ -12,7 +12,7 @@
 	<div class="container">
 		<h2>선택하신 상품을 장바구니에 담았습니다.</h2>
 		<a href="${pageContext.request.contextPath }/home.do">쇼핑 계속하기</a>
-		<a href="/basket/basketList.do">장바구니 가기</a>
+		<a href="${pageContext.request.contextPath }/basket/basketList.do">장바구니 가기</a>
 	</div>
 </body>
 </html>

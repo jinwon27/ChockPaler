@@ -59,7 +59,7 @@
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="${pageContext.request.contextPath}/users/loginform.do" class="nav-link px-2 link-secondary">로그인</a></li>
           <li><a href="${pageContext.request.contextPath}/users/signupform.do" class="nav-link px-2 link-dark">회원가입</a></li>
-          <li><a href="${pageContext.request.contextPath }/userorder/userorderform.do?name=${dto.id }" class="nav-link px-2 link-dark">장바구니</a></li>
+          <li><a href="${pageContext.request.contextPath }/basket/basketList.do" class="nav-link px-2 link-dark">장바구니</a></li>
           <li><a href="${pageContext.request.contextPath }/orderinquiry/orderinquiry.do?id=${id }" class="nav-link px-2 link-dark">주문조회</a></li>
         </ul>
 

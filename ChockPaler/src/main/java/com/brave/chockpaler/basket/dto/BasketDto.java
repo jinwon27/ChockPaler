@@ -1,6 +1,6 @@
 package com.brave.chockpaler.basket.dto;
 
-public class basketDto {
+public class BasketDto {
 	private int item_num;
 	private String id;
 	private String name;
@@ -8,7 +8,9 @@ public class basketDto {
 	private int price;
 	private String img;
 	
-	public basketDto(int item_num, String id, String name, int count, int price, String img) {
+	public BasketDto() {}
+	
+	public BasketDto(int item_num, String id, String name, int count, int price, String img) {
 		super();
 		this.item_num = item_num;
 		this.id = id;
