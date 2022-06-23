@@ -12,7 +12,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.brave.chockpaler.items.dto.ItemsDto;
 import com.brave.chockpaler.items.service.ItemsService;
 import com.brave.chockpaler.util.pageUtil;
 
