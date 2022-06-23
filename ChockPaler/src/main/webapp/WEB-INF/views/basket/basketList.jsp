@@ -15,7 +15,7 @@
 	<c:forEach var="tmp" items="${list}" step="1" varStatus="status" >
 		<div class="row">
 			<div class="col-4">
-		      <p>${tmp.img }</p>
+		      <img src="${pageContext.request.contextPath }${tmp.img}" />
 		    </div>
 		    <div class="col">
 		   		<p>상품 : ${tmp.name }</p>
