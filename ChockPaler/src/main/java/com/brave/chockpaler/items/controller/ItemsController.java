@@ -52,8 +52,8 @@ public class ItemsController {
 	public String itemInfo(@RequestParam int num, HttpServletRequest request) {
 		
 		ItemsDto dto = service.getItemData(num);
+		request.setAttribute("num", num);
 		request.setAttribute("dto", dto);
-		
 		return "items/iteminfo";
 	}
 	

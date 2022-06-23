@@ -54,7 +54,33 @@
 				</form>
     		</div>
 		</div>
+		
+		<!-- 댓글 입력할 div -->
+		<div class="row">
+			<form action="${pageContext.request.contextPath }/review/addreview.do">
+				<div class="input-group mb-3">
+					<input type="hidden" name="id" value="${id }" />
+					<input type="hidden" name="item_num" value="${num }"/>
+					<input type="text" name="comment" id="comment" class="form-control" placeholder="구매후기를 작성해주세요" aria-label="Recipient's username" aria-describedby="button-addon2">
+					<button class="btn btn-outline-secondary" type="submit" id="button-addon2">작성</button>
+				</div>
+			</form>
+		</div>
+		
+		<!-- 댓글 보여주는 리스트 -->
+		<table>
+			<c:forEach var="tmp" items="${reviewList }" step="1">
+				<tr>
+					<td>${tmp.id }</td>
+					<td>${tmp.comment }</td>
+					<td>${tmp.regdate }</td>
+				</tr>
+			</c:forEach>
+		</table>
+		
+		
 	</div>
+	
 </body>
 <script src="${pageContext.request.contextPath}/resources/js/gura_util.js"></script>
 <script>

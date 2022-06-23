@@ -34,8 +34,9 @@ content CLOB,
 regdate DATE
 );
 
+--이거 안씀 지울거임--
 CREATE SEQUENCE REVIEWS_SEQ;
-
+--이거도 안씀 지울거임--
 CREATE TABLE ORDER_VIEW(
 num NUMBER,
 id VARCHAR2(30),
@@ -66,3 +67,14 @@ id VARCHAR2(50) NOT NULL,
 addr VARCHAR2(200),
 item_name VARCHAR2(200)
 );
+
+-- REVIEW 관리할 TABLE --
+CREATE TABLE review(
+num NUMBER PRIMARY KEY,
+id VARCHAR2(100),
+item_num NUMBER,
+content  CLOB,
+regdate DATE
+);
+-- REVIEW 관리할 SEQUENCE -- 
+CREATE SEQUENCE review_seq;
