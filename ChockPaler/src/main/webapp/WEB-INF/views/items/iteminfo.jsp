@@ -10,10 +10,10 @@
 <body>
 	<div class="container">
 		<!-- 정보들이  출력되는곳-->
-		<form action=""> <!-- 장바구니 페이지로 보내줄 컨트롤러에 매핑할 주소 -->
+		<form action="/basket/insert.do"> <!-- 장바구니 페이지로 보내줄 컨트롤러에 매핑할 주소 -->
 		<!-- 여기 마무리 하겠습니다 -->
 			<label for="name">상품명</label>
-			<input type="text" id="name" value="${dto.name }"/>
+			<input type="text" id="name" name="name" value="${dto.name }"/>
 			<br />
 			<label for="count">갯수</label>
 			<select name="count" id="count">
