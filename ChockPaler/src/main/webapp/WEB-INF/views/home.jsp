@@ -23,6 +23,7 @@
 <body>
 	
 	<div class="container">
+		<!-- 여기서부터 진원님 -->
 		<%@include file="/WEB-INF/views/include/header.jsp" %>
 		<!-- Navbar -->
 		<!-- <br /> -->
@@ -117,6 +118,8 @@
 		    </div>
 		  </div>
 		</nav>
+		<!-- 0624 진원님 여기까지 -->
+		
 		
 		<div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
 			<div class="carousel-indicators">

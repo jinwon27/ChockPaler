@@ -69,7 +69,7 @@
 		
 		<!-- 댓글 보여주는 리스트 -->
 		<table>
-			<c:forEach var="tmp" items="${reviewList }" step="1">
+			<c:forEach var="tmp" items="${list }" step="1">
 				<tr>
 					<td>${tmp.id }</td>
 					<td>${tmp.comment }</td>

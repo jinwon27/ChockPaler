@@ -1,6 +1,7 @@
 package com.brave.chockpaler.items.controller;
 
 import java.lang.ProcessBuilder.Redirect;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -13,12 +14,16 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.brave.chockpaler.items.dto.ItemsDto;
 import com.brave.chockpaler.items.service.ItemsService;
+import com.brave.chockpaler.review.dto.ReviewDto;
+import com.brave.chockpaler.review.service.ReviewService;
 
 @Controller
 public class ItemsController {
 	
 	@Autowired
 	private ItemsService service;
+	@Autowired
+	private ReviewService rService;
 	
 	//사진 업로드 & db 저장
 //	@RequestMapping(value="/items/upload")
@@ -52,6 +57,8 @@ public class ItemsController {
 	public String itemInfo(@RequestParam int num, HttpServletRequest request) {
 		
 		ItemsDto dto = service.getItemData(num);
+		List<ReviewDto> list = rService.getReviews();
+		request.setAttribute("list", list);
 		request.setAttribute("num", num);
 		request.setAttribute("dto", dto);
 		return "items/iteminfo";
