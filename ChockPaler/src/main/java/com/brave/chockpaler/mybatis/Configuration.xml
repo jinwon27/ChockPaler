@@ -18,5 +18,6 @@
 		<mapper resource="com/brave/chockpaler/mybatis/OrderInquiryMapper.xml"/>
 		<mapper resource="com/brave/chockpaler/mybatis/ReviewMapper.xml"/>
 		<mapper resource="com/brave/chockpaler/mybatis/BasketMapper.xml"/>
+		<mapper resource="com/brave/chockpaler/mybatis/NoticeMapper.xml"/>
 	</mappers>
  </configuration> 
