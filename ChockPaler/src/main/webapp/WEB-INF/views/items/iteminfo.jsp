@@ -68,9 +68,18 @@
 		</div>
 		
 		<!-- 댓글 보여주는 리스트 -->
-		<table>
+		<table class="table">
+			<thead>
+				<tr>
+      				<th scope="col">no</th>
+      				<th scope="col">작성자</th>
+      				<th scope="col">내용</th>
+      				<th scope="col">날짜</th>
+    			</tr>
+			</thead>
 			<c:forEach var="tmp" items="${list }" step="1">
 				<tr>
+					<th scope="row">${tmp.num }</th>
 					<td>${tmp.id }</td>
 					<td>${tmp.comment }</td>
 					<td>${tmp.regdate }</td>
