@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="container">
-		<form action="${pageContext.request.contextPath }/notice/list.do">
+		<form action="${pageContext.request.contextPath }/notice/addnotice.do">
 			<div class="mb-3">
 				<label for="exampleFormControlInput1" class="form-label">제목</label>
 				<input type="text" class="form-control" id="exampleFormControlInput1" name="title" placeholder="제목을 입력하세요">
@@ -19,7 +19,7 @@
 				<label for="exampleFormControlTextarea1" class="form-label">내용</label>
 				<textarea class="form-control" id="exampleFormControlTextarea1" name="content" rows="3"></textarea>
 			</div>
-			<button type="submit" class="btn btn-outline-light">등록</button>
+			<button type="submit" class="btn btn-outline-info">등록</button>
 		</form>
 	</div>
 </body>

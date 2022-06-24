@@ -16,6 +16,8 @@ import com.brave.chockpaler.items.dto.ItemsDto;
 import com.brave.chockpaler.items.service.ItemsService;
 import com.brave.chockpaler.review.dto.ReviewDto;
 import com.brave.chockpaler.review.service.ReviewService;
+import com.brave.chockpaler.util.pageUtil;
+import com.brave.chockpaler.util.reviewPageUtil;
 
 @Controller
 public class ItemsController {
@@ -54,11 +56,18 @@ public class ItemsController {
 	}
 	
 	@RequestMapping("/items/iteminfo.do")
-	public String itemInfo(@RequestParam int num, HttpServletRequest request) {
+	public String itemInfo(@RequestParam int num, @RequestParam(defaultValue="1") int curPage, HttpServletRequest request) {
 		
 		ItemsDto dto = service.getItemData(num);
-		List<ReviewDto> list = rService.getReviews();
-		request.setAttribute("list", list);
+		//호출된 페이지 reviewcount 증가 시켜야됨
+		service.addViewCount(num);
+		
+		reviewPageUtil pUtil = new reviewPageUtil(rService.getReviewCount(), curPage);
+		request.setAttribute("startPageNum", pUtil.getPageBegin());
+		request.setAttribute("endPageNum", pUtil.getPageEnd());
+		request.setAttribute("pageUtil", pUtil);
+		
+		request.setAttribute("list", rService.getReviews(pUtil));
 		request.setAttribute("num", num);
 		request.setAttribute("dto", dto);
 		return "items/iteminfo";

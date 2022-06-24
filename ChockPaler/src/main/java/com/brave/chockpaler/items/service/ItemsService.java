@@ -18,8 +18,6 @@ public interface ItemsService {
 	public void insert(ItemsDto dto, HttpServletRequest request);
 	
 	public void delete(int num);
-	//이미지 upload & DB 저장하기
-	//public void saveImage(ItemsDto dto, HttpServletRequest request);
-
-
+	
+	public void addViewCount(int num);
 }

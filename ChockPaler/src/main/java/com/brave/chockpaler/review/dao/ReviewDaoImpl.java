@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.brave.chockpaler.review.dto.ReviewDto;
+import com.brave.chockpaler.util.reviewPageUtil;
 
 @Repository
 public class ReviewDaoImpl implements ReviewDao{
@@ -20,8 +21,13 @@ public class ReviewDaoImpl implements ReviewDao{
 	}
 
 	@Override
-	public List<ReviewDto> selectReview() {
-		return session.selectList("review.select");
+	public List<ReviewDto> selectReview(reviewPageUtil pUtil) {
+		return session.selectList("review.select", pUtil);
+	}
+
+	@Override
+	public int getCount() {
+		return session.selectOne("review.getCount");
 	}
 
 }
