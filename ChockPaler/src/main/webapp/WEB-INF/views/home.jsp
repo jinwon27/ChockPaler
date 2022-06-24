@@ -3,12 +3,13 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
 <html>
 <head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/header.css" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/footer.css" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/navbar.css" />
+	<title>/home.jsp</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/header.css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/footer.css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/navbar.css" />
 	<style>
 		li{
 			display: inline-block;
@@ -34,14 +35,13 @@
 		}
 	</style>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-	<title>/home.jsp</title>
 </head>
 <body>
 	
 	<div class="container">
 		<!-- 여기서부터 진원님 -->
-		<%@include file="/WEB-INF/views/include/header.jsp" %>
-		<%@include file="/WEB-INF/views/include/navbar.jsp" %>
+		<jsp:include page="/WEB-INF/views/include/navbar.jsp"></jsp:include>
+		<jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
 		<!-- Navbar -->
 		<!-- <br /> -->
 		<!-- ${usersDto.name } 님 환영합니다 if(session.id == usersDto.id) -->
@@ -129,7 +129,7 @@
 		</h2>
 		<div class="row">
 			<c:forEach var="tmp" items="${itemList }" step="1" varStatus="status" >
-				<div class="col-6 col-md-4 col-lg-3">
+				<div class="col-12 col-md-6 col-lg-4">
 					<div class="card mb-3 animate__animated animate__fadeIn" id="itemsDiv">
 					<!-- <a href="상품 간단설명된 이미지 경로"></a>  -->
 						<a href="${pageContext.request.contextPath }/items/iteminfo.do?num=${tmp.item_num }">
