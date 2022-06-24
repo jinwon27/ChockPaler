@@ -3,7 +3,14 @@
 <mapper namespace="review">
 	<insert id="insert" parameterType="com.brave.chockpaler.review.dto.ReviewDto">
 		INSERT INTO review(num, id, item_num, content, regdate)
-		VALUES(review_seq.NEXTVAL, #{id}, #{item_num}, #{content}, sysdate)
+		<choose>
+			<when test="id == ''">
+				VALUES(review_seq.NEXTVAL, '익명', #{item_num}, #{content}, sysdate)
+			</when>
+			<otherwise>
+				VALUES(review_seq.NEXTVAL, #{id}, #{item_num}, #{content}, sysdate)
+			</otherwise>
+		</choose>
 	</insert>
 	
 	<select id="select" resultType="com.brave.chockpaler.review.dto.ReviewDto">
