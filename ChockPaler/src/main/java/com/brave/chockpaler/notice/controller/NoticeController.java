@@ -8,6 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.brave.chockpaler.notice.dto.NoticeDto;
 import com.brave.chockpaler.notice.service.NoticeService;
+import com.brave.chockpaler.util.reviewPageUtil;
 
 @Controller
 public class NoticeController {
@@ -16,8 +17,17 @@ public class NoticeController {
 	NoticeService service;
 	
 	@RequestMapping("/notice/list")
-	public ModelAndView ShowNotice(ModelAndView mView) {
-		mView.addObject("list", service.getList());
+	public ModelAndView ShowNotice(ModelAndView mView, @RequestParam(defaultValue="1") int curPage) {
+		
+		reviewPageUtil pUtil = new reviewPageUtil(service.getCount(), curPage);
+		
+		// 얘네들은 없어도 되는것 같은데.. 귀찮아서 일단
+		mView.addObject("startPageNum", pUtil.getPageBegin());
+		mView.addObject("endPageNum", pUtil.getPageEnd());
+		mView.addObject("pageUtil", pUtil);
+		//
+		
+		mView.addObject("list", service.getList(pUtil));
 		mView.setViewName("notice/list");
 		return mView;
 	}
@@ -30,7 +40,13 @@ public class NoticeController {
 	}
 	
 	@RequestMapping("/notice/add")
-	public String AddNotice() {
+	public String AddNoticeForm() {
 		return "notice/add";
+	}
+	
+	@RequestMapping("/notice/addnotice")
+	public String AddNotice(NoticeDto dto) {
+		service.addNotice(dto);
+		return "redirect:/notice/list.do";
 	}
 }

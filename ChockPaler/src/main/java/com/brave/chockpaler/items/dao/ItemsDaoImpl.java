@@ -42,4 +42,9 @@ public class ItemsDaoImpl implements ItemsDao {
 	public void delete(int num) {
 		session.delete("Items.delete", num);
 	}
+
+	@Override
+	public void setViewCount(int num) {
+		session.update("Items.updateViewCount", num);
+	}
 }

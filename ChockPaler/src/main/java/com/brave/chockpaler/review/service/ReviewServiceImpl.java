@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.brave.chockpaler.review.dao.ReviewDao;
 import com.brave.chockpaler.review.dto.ReviewDto;
+import com.brave.chockpaler.util.reviewPageUtil;
 
 @Service
 public class ReviewServiceImpl implements ReviewService{
@@ -20,8 +21,13 @@ public class ReviewServiceImpl implements ReviewService{
 	}
 
 	@Override
-	public List<ReviewDto> getReviews() {
-		return dao.selectReview();
+	public List<ReviewDto> getReviews(reviewPageUtil pUtil) {
+		return dao.selectReview(pUtil);
+	}
+
+	@Override
+	public int getReviewCount() {
+		return dao.getCount();
 	}
 
 }

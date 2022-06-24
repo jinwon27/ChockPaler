@@ -42,4 +42,10 @@
 		SELECT COUNT(*) FROM
 		items
 	</select>
+	
+	<update id="updateViewCount" parameterType="int">
+		UPDATE items SET
+		viewcount = viewcount+1
+		WHERE item_num = #{num }
+	</update>
 </mapper>

@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="notice">
-	<select id="getList" resultType="com.brave.chockpaler.notice.dto.NoticeDto">
-		SELECT * FROM notice
+	<select id="getList" resultType="com.brave.chockpaler.notice.dto.NoticeDto" parameterType="com.brave.chockpaler.util.reviewPageUtil">
+		SELECT *
+		FROM
+			(SELECT result1.*, ROWNUM AS rnum
+			FROM
+				(SELECT *
+				FROM notice
+				ORDER BY num DESC) result1)
+		WHERE rnum BETWEEN #{pageBegin} AND #{pageEnd}
 	</select>
 	
 	<select id="getDto" parameterType="int" resultType="com.brave.chockpaler.notice.dto.NoticeDto">
 		SELECT * FROM notice WHERE num = #{num }
 	</select>
+	
+	<select id="getNoticeCount" resultType="int">
+		SELECT COUNT(*) FROM
+		notice
+	</select>
+	
+	<insert id="addData" parameterType="com.brave.chockpaler.notice.dto.NoticeDto">
+		INSERT INTO notice(num, title, content, regdate)
+		VALUES(notice_seq.NEXTVAL, #{title}, #{content}, sysdate)
+	</insert>
 </mapper>
