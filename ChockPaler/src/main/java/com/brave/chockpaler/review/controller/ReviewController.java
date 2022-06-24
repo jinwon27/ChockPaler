@@ -19,8 +19,6 @@ public class ReviewController {
 	public String review(ReviewDto dto) {
 	
 		service.addReview(dto);
-		service.getReviews();
-		
 		return "redirect:/items/iteminfo.do?num="+dto.getItem_num();
 	}
 }
