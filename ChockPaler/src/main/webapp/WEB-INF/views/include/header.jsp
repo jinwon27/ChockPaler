@@ -5,10 +5,10 @@
    <I><h1><a href="#">ChokPaler</a></h1></I>
     <ul class="flex-menu">
       <li>&nbsp;</li>
-      <li><a href="#">BEST</a></li>
+      <li><a href="${pageContext.request.contextPath}">BEST</a></li>
       <li><a href="${pageContext.request.contextPath}">COOKIE</a></li>
       <li><a href="${pageContext.request.contextPath}">COFFEE</a></li>
-      <li><a href="${pageContext.request.contextPath}">GOODS</a></li>
+      <li><a href="${pageContext.request.contextPath}">NOTICE</a></li>
       <li><a href="${pageContext.request.contextPath}">EVENT</a></li>  
     </ul>
   </div>

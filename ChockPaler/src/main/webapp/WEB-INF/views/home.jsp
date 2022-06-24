@@ -36,9 +36,8 @@
 	
 	<div class="container">
 		<!-- 여기서부터 진원님 -->
-		<jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
 		<jsp:include page="/WEB-INF/views/include/navbar.jsp"></jsp:include>
-		
+		<jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
 		<!-- Navbar -->
 		<!-- <br /> -->
 		<!-- ${usersDto.name } 님 환영합니다 if(session.id == usersDto.id) -->
@@ -126,7 +125,7 @@
 		</h2>
 		<div class="row">
 			<c:forEach var="tmp" items="${itemList }" step="1" varStatus="status" >
-				<div class="col-6 col-md-4 col-lg-3">
+				<div class="col-12 col-md-6 col-lg-4">
 					<div class="card mb-3 animate__animated animate__fadeIn" id="itemsDiv">
 					<!-- <a href="상품 간단설명된 이미지 경로"></a>  -->
 						<a href="${pageContext.request.contextPath }/items/iteminfo.do?num=${tmp.item_num }">
