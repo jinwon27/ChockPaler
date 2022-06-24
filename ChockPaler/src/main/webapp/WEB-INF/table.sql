@@ -68,6 +68,7 @@ addr VARCHAR2(200),
 item_name VARCHAR2(200)
 );
 
+<<<<<<< HEAD
 -- REVIEW 관리할 TABLE --
 CREATE TABLE review(
 num NUMBER PRIMARY KEY,
@@ -78,3 +79,13 @@ regdate DATE
 );
 -- REVIEW 관리할 SEQUENCE -- 
 CREATE SEQUENCE review_seq;
+=======
+CREATE TABLE basket( -- 장바구니
+item_num NUMBER primary key, --상품번호 (장바구니 목록에서 삭제 할 때 필요)
+id VARCHAR2(100),	--주문자 아이디(로그인 안하면 장바구니 못봄)
+name VARCHAR2(100), 	--상품 이름
+count NUMBER,	--주문한 수량
+price NUMBER,	--수량 x가격(총액)
+img VARCHAR2(300), --  상품이미지
+);
+>>>>>>> branch 'master' of https://github.com/usang0320/ChockPaler.git
