@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
@@ -56,4 +56,29 @@
 		  </div>
 		</nav>
 </body>
-</html>
+</html> --%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+	<!-- 로그인 및 마이페이지 검색 navbar  -->
+<nav class="navbar navbar-expand-md navbar-light fixed-top bg-white">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                <li class="nav-item">
+            		<a class="nav-link" href="#">로그인</a>
+          		</li>
+          		<li class="nav-item">
+           			 <a class="nav-link" href="#">회원가입</a>
+          		</li>
+          		<li class="nav-item">
+           			 <a class="nav-link" href="#">마이페이지</a>
+          		</li>
+          		<li class="nav-item">
+           			 <a class="nav-link" href="#">장바구니</a>
+          		</li>
+          		<li class="nav-item">
+           			 <a class="nav-link" href="#">검색</a>
+          		</li>
+        </ul>
+      </div>
+    </div>
+ </nav>
