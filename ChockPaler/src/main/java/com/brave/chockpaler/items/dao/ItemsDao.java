@@ -19,4 +19,6 @@ public interface ItemsDao {
 	public void insert(ItemsDto dto);
 
 	public void delete(int num);
+	
+	public void setViewCount(int num);
 }

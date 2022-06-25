@@ -49,37 +49,6 @@ public class ItemsServiceImpl implements ItemsService {
 		dao.delete(num);		
 	}
 
-//	@Override
-//	public void saveImage(ItemsDto dto, HttpServletRequest request) {
-//		//업로드된 이미지의 정보를 가지고있는 MultipartFile 객체의 참조값 얻어오기
-//		MultipartFile image=dto.getImg();
-//		//저장할 파일 이름 만들기 위해서 사용됨
-//		String orgImgName= image.getOriginalFilename();
-//		//webapp/upload 폴더 까지의 실제 경로 (서버의 파일 시스템 상에서의 경로)
-//		String realPath= request.getServletContext().getRealPath("/upload");
-//		// db에 저장할 이미지의 상세 경로
-//		String imgPath=realPath+ File.separator;
-//		//디렉토리 만들 파일 객체 생성
-//		File upload = new File(imgPath);
-//		if(!upload.exists()) {
-//			upload.mkdir();
-//		}
-//		//저장할 이미지의 이름을 구성한다 
-//		String saveImgName = System.currentTimeMillis() + orgImgName;
-//		try {
-//			//upload 폴더에 파일을 저장한다
-//			image.transferTo(new File(imgPath+saveImgName));
-//			System.out.println();
-//		}catch(Exception e) {
-//			e.printStackTrace();
-//		}
-//		String img=(String)request.getSession().getAttribute("img");
-//		dto.setImgPath("/upload"+saveImgName);
-//		
-//		dao.insert(dto);
-//
-//	}
-
 	@Override
 	public void insert(ItemsDto dto, HttpServletRequest request) {
 		
@@ -113,6 +82,11 @@ public class ItemsServiceImpl implements ItemsService {
 				
 		//GalleryDao 를 이용해서 DB 에 저장하기
 		dao.insert(dto);
+	}
+
+	@Override
+	public void addViewCount(int num) {
+		dao.setViewCount(num);
 	}
 
 }
