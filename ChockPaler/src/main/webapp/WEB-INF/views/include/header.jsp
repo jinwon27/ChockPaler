@@ -5,11 +5,11 @@
    <I><h1><a href="#">ChokPaler</a></h1></I>
     <ul class="flex-menu">
       <li>&nbsp;</li>
-      <li><a href="#">BEST</a></li>
-      <li><a href="#">COOKIE</a></li>
-      <li><a href="#">COFFEE</a></li>
-      <li><a href="#">GOODS</a></li>
-      <li><a href="#">EVENT</a></li>  
+      <li><a href="${pageContext.request.contextPath}/home.do?viewcount=1">BEST</a></li>
+      <li><a href="${pageContext.request.contextPath}/home.do?item_type='cookie'">COOKIE</a></li>
+      <li><a href="${pageContext.request.contextPath}/home.do?item_type='beverage'">BEVERAGE</a></li>
+      <li><a href="${pageContext.request.contextPath}/notice/list.do">NOTICE</a></li>
+      <li><a href="${pageContext.request.contextPath}">EVENT</a></li>  
     </ul>
   </div>
 </div>
