@@ -11,20 +11,58 @@
 </head>
 <body>
 	<div class="container">
-	<h1>${id}님의 장바구니</h1>
-	<c:forEach var="tmp" items="${list}" step="1" varStatus="status" >
-		<div class="row">
-			<div class="col-4">
-		      <img src="${pageContext.request.contextPath }${tmp.img}" />
-		    </div>
-		    <div class="col">
-		   		<p>상품 : ${tmp.name }</p>
-		      	<p>수량 : ${tmp.count }</p>
-		      	<p>가격 : ${tmp.price }</p>
-		      	<p>------------------</p>
-		    </div>
+		<table>
+		<caption>장바구니</caption>
+			<thead>
+				<tr>
+					<th>
+						<input type="checkbox" checked="checked"/>
+						<span>전체선택</span>
+					</th>
+					<th colspan="2">상품정보</th>
+					<th>수량</th>
+					<th>가격</th>
+				</tr>
+			</thead>
+			<c:forEach var="tmp" items="${list}" step="1" varStatus="status" >
+				<tbody>
+					<tr>
+						<td>
+							<input type="checkbox" checked="checked"/>
+						</td>
+						<td>
+							<img src="${pageContext.request.contextPath }${tmp.img}" />
+						</td>
+						<td>${tmp.name }</td>
+						<td>${tmp.count }</td>
+						<td>${tmp.price }</td>
+					</tr>
+				</tbody>
+			</c:forEach>
+		</table>
+		<div>
+			<a href="${pageContext.request.contextPath }/home.do">계속 쇼핑하기</a>
+			<a href="${pageContext.request.contextPath }/basket/buy.do">구매하기</a>
 		</div>
-	</c:forEach>
-	<h1><strong>총액 : ${sum}</strong></h1>
+	</div>
+	
+	<!-- 
+		<h1>${id}님의 장바구니</h1>
+		<c:forEach var="tmp" items="${list}" step="1" varStatus="status" >
+			<div class="row">
+				<div class="col-4">
+			      <img src="${pageContext.request.contextPath }${tmp.img}" />
+			    </div>
+			    <div class="col">
+			   		<p>상품 : ${tmp.name }</p>
+			      	<p>수량 : ${tmp.count }</p>
+			      	<p>가격 : ${tmp.price }</p>
+			      	<p>------------------</p>
+			    </div>
+			</div>
+		</c:forEach>
+		<h1><strong>총액 : ${sum}</strong></h1>
+	 -->
+	
 </body>
 </html>
