@@ -31,18 +31,16 @@ public class ItemsServiceImpl implements ItemsService {
 	}
 
 	@Override
-	public List<ItemsDto> getItemList(pageUtil pUtil, String item_type, String searchWord, int viewCount) {
+	public List<ItemsDto> getItemList(pageUtil pUtil, String item_type) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("pUtil", pUtil);
 		map.put("item_type", item_type);
-		map.put("searchWord", searchWord);
-		map.put("viewCount", viewCount);
 		return dao.getList(map);
 	}
 
 	@Override
-	public int getItemCount() {
-		return dao.getCount();
+	public int getItemCount(String name) {
+		return dao.getCount(name);
 	}
 
 
@@ -89,6 +87,15 @@ public class ItemsServiceImpl implements ItemsService {
 	@Override
 	public void addViewCount(int num) {
 		dao.setViewCount(num);
+	}
+
+	@Override
+	public List<ItemsDto> searchItems(String name, pageUtil pUtil) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("name", name);
+		map.put("pUtil", pUtil);
+		
+		return dao.searchItems(map);
 	}
 
 }

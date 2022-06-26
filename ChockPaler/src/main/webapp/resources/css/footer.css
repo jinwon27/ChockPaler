@@ -50,3 +50,11 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+      
+      .py-5{
+      	padding-bottom: 0;
+      }
+      
+      .footdiv {
+      	padding-bottom: 0;
+      }

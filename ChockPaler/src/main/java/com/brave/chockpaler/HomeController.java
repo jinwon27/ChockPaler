@@ -24,17 +24,14 @@ public class HomeController {
 	@RequestMapping("/home")
 	public String home(HttpServletRequest request, 
 						@RequestParam(defaultValue="1") int curPage, 
-						@RequestParam(defaultValue="") String item_type,
-						@RequestParam(defaultValue="") String name,
-						@RequestParam(defaultValue="0") int viewCount
+						@RequestParam(defaultValue="") String item_type
 						) {
-		
-		String searchWord = name;
-		pageUtil pUtil = new pageUtil(service.getItemCount(), curPage);
+
+		pageUtil pUtil = new pageUtil(service.getItemCount(""), curPage);
 		request.setAttribute("startPageNum", pUtil.getPageBegin());
 		request.setAttribute("endPageNum", pUtil.getPageEnd());
 		request.setAttribute("pageUtil", pUtil);
-		request.setAttribute("itemList", service.getItemList(pUtil, item_type, searchWord, viewCount));
+		request.setAttribute("itemList", service.getItemList(pUtil, item_type));
 		
 		
 		return "home";

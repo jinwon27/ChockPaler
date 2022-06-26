@@ -14,11 +14,13 @@ public interface ItemsDao {
 	
 	public List<ItemsDto> getList(Map<String, Object> map);
 	
-	public int getCount();
+	public int getCount(String name);
 	
 	public void insert(ItemsDto dto);
 
 	public void delete(int num);
 	
 	public void setViewCount(int num);
+	
+	public List<ItemsDto> searchItems(Map<String, Object> map);
 }

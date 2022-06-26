@@ -31,21 +31,19 @@
 		FROM
 			(SELECT result1.*, ROWNUM AS rnum
 			FROM
-				(SELECT item_type, item_num, name, detail, img, price, regdate, remain_count, viewcount
+				(SELECT item_type, item_num, name, detail, img, price, regdate, remain_count
 				FROM items
 				<include refid="searchCondition"/>
 				ORDER BY item_num DESC) result1)
 		WHERE rnum BETWEEN #{pUtil.pageBegin} AND #{pUtil.pageEnd}
-		<choose>
-			<when test="viewcount == 1">
-				ORDER BY viewcount DESC
-			</when>
-		</choose>
 	</select>
 	
-	<select id="getItemCount" resultType="int">
+	<select id="getItemCount" resultType="int" parameterType="String">
 		SELECT COUNT(*) FROM
 		items
+			<if test="value == ''">
+				WHERE name = #{value}
+			</if>
 	</select>
 	
 	<update id="updateViewCount" parameterType="int">
@@ -53,4 +51,16 @@
 		viewcount = viewcount+1
 		WHERE item_num = #{num }
 	</update>
+	
+	<select id="searchList" parameterType="Map" resultType="itemsDto">
+		SELECT *
+		FROM
+			(SELECT result1.*, ROWNUM AS rnum
+			FROM
+				(SELECT item_type, item_num, name, detail, img, price, regdate, remain_count
+				FROM items
+				WHERE name like '%'|#{name}|'%'
+				ORDER BY item_num DESC) result1)
+		WHERE rnum BETWEEN #{pUtil.pageBegin} AND #{pUtil.pageEnd}
+	</select>
 </mapper>

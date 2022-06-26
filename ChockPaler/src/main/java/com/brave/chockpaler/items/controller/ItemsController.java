@@ -74,9 +74,12 @@ public class ItemsController {
 	}
 	
 	@RequestMapping("/items/searchTarget")
-	public String searchList() {
+	public String searchList(HttpServletRequest request, @RequestParam("name") String name) {
 		
-		return null;
+		pageUtil pUtil = new pageUtil(service.getItemCount(name), 1);
+		request.setAttribute("pageUtil", pUtil);
+		request.setAttribute("itemList", service.searchItems(name, pUtil));
+		
+		return "redirect:/home.do";
 	}
-	
 }

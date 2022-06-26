@@ -1,6 +1,7 @@
 package com.brave.chockpaler.items.service;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -11,13 +12,15 @@ public interface ItemsService {
 	
 	public ItemsDto getItemData(int num);
 	
-	public List<ItemsDto> getItemList(pageUtil util, String item_type, String searchWord, int viewCount);
+	public List<ItemsDto> getItemList(pageUtil util, String item_type);
 	
-	public int getItemCount();
+	public int getItemCount(String name);
 
 	public void insert(ItemsDto dto, HttpServletRequest request);
 	
 	public void delete(int num);
 	
 	public void addViewCount(int num);
+	
+	public List<ItemsDto> searchItems(String name, pageUtil pUtil);
 }

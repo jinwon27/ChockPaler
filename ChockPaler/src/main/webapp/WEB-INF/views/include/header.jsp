@@ -64,7 +64,7 @@
 			<li>
 				<!-- 검색 -->
 				<div style="margin-left: 10%;" align="right">
-					<form method="post" action="/items/searchTarget.do" id="searchbox5">
+					<form method="get" action="${pageContext.request.contextPath}/items/searchTarget.do" id="searchbox5">
 						<input id="search" name="name" type="text" size="40" />
 					</form>
 				</div>
