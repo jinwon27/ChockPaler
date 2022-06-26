@@ -1,67 +1,13 @@
-<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-		  <div class="container-fluid">
-		    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-		      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-		      	<li class="nav-item dropdown">
-		          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-		          	Brand
-		          </a>
-		          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-		            <li><a class="dropdown-item" href="#">브랜드 소개</a></li>
-		            <li><a class="dropdown-item" href="#">매장 위치</a></li>
-		          </ul>
-		        </li>
-		        <li class="nav-item">
-		          <a class="nav-link" href="#">공지사항</a>
-		        </li>
-		        <li class="nav-item">
-		          <a class="nav-link" href="${pageContext.request.contextPath }/home.do?item_type=cookie">쿠키</a>
-		        </li>
-		        <li class="nav-item">
-		          <a class="nav-link" href="${pageContext.request.contextPath }/home.do?item_type=beverage">음료</a>
-		        </li>
-		        <!-- 
-		        	<li class="nav-item dropdown">
-			          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-			          	음료
-			          </a>
-			          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-			            <li><a class="dropdown-item" href="#">커피</a></li>
-			            <br />
-			            <li><a class="dropdown-item" href="#">에이드</a></li>
-			          </ul>
-			        </li>
-		         -->
-		        <li class="nav-item">
-		          <a class="nav-link" href="#">Event</a>
-		        </li>
-		      </ul>
-		      <!-- 
-		      <form class="d-flex" role="search">
-		        <input class="form-control me-2" type="search" placeholder="검색어 입력..." aria-label="Search">
-		        <button class="btn btn-outline-success" type="submit">search</button>
-		      </form>
-		      -->
-		    </div>
-		  </div>
-		</nav>
-</body>
-</html> --%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 	<!-- 로그인 및 마이페이지 검색 navbar  -->
 <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white">
 	<div class="container-fluid">
+		<a href="">
+			<svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+		</a>
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<ul class="navbar-nav ms-auto mb-2 mb-md-0">
 				<c:choose>
@@ -77,6 +23,14 @@
           			<li>
           				<a href="${pageContext.request.contextPath}/users/logout.do" class="nav-link">로그아웃</a>
 					</li>
+					<!-- 계정명이 admin 일시 상품등록하기 -->
+					<c:choose>
+						<c:when test="${sessionScope.id == 'admin' }">
+							<li class="nav-item">
+								<a class="nav-link" href="${pageContext.request.contextPath}/items/uploadform.do">상품등록</a>
+							</li>
+						</c:when>
+					</c:choose>
           		</c:otherwise>
 				</c:choose>
 					<li class="nav-item">
@@ -93,14 +47,15 @@
 							</svg>
            				</a>
           			</li>
-          		<li class="nav-item">
+          			
+          	 		<!-- <li class="nav-item">
            			 <a class="nav-link" href="#">
            			 	<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-  							<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+  						<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/> 
 						</svg>
-           			 </a>
-          		</li>
-        	</ul>
+					</a> 
+					</li> -->
+				</ul>	
 		</div>
 	</div> 
  </nav>

@@ -11,7 +11,7 @@ public interface ItemsService {
 	
 	public ItemsDto getItemData(int num);
 	
-	public List<ItemsDto> getItemList(pageUtil util, String item_type);
+	public List<ItemsDto> getItemList(pageUtil util, String item_type, String searchWord, int viewCount);
 	
 	public int getItemCount();
 

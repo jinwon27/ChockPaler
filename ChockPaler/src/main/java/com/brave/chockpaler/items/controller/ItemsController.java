@@ -73,4 +73,10 @@ public class ItemsController {
 		return "items/iteminfo";
 	}
 	
+	@RequestMapping("/items/searchTarget")
+	public String searchList() {
+		
+		return null;
+	}
+	
 }
