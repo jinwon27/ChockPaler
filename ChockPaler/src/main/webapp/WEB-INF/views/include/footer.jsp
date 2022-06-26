@@ -18,21 +18,24 @@
   </symbol>
 </svg>
 
-<div class="container" style="background-color: #e3f2fd;" >
-  <footer class="py-5 ">    
-	<div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-	<ul class="nav justify-content">
-		<li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-		<li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-		<li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-		<li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-		<li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-	</ul>
-	<ul class="list-unstyled d-flex">
-		<li class="ms-3"><a class="link-dark" href="https://map.naver.com/v5/entry/place/1211659645?c=14156549.3928610,4517233.4005591,13,0,0,0,dh&placePath=%2Fhome"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
-		<li class="ms-3"><a class="link-dark" href="https://www.instagram.com/_cookiehee/"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
-		<li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
-	</ul>
-    </div>
+<div class="footdiv" style="background-color: white;" >
+  <footer class="py-5" style="padding-bottom: 0;">    
+   <div class="d-flex flex-column flex-sm-row justify-content-center py-4 my-4 border-top pb-1 mb-1" >
+   <ul class="list-unstyled d-flex">
+      <li class="ms-3"><a class="link-secondary" href="https://map.naver.com/v5/entry/place/1211659645?c=14156549.3928610,4517233.4005591,13,0,0,0,dh&placePath=%2Fhome"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
+      <li class="ms-3"><a class="link-secondary" href="https://www.instagram.com/_cookiehee/"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
+      <li class="ms-3"><a class="link-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
+   </ul>
+   </div>
+   <div class="d-flex flex-column flex-sm-row justify-content-center pb-1 mb-1">
+   <ul class="list-unstyled d-flex text-center">
+		<li class="ms-3 text-center text-muted">&copy; 2022 Company. (주)ChockPaler</li>
+	   	<li class="ms-3 text-center text-muted">owner. 최광원</li>
+		<li class="ms-3 text-center text-muted">personal info manager. brave Team</li>
+	   	<li class="ms-3 text-center text-muted">tel.8282-9292</li>
+	   	<li class="ms-3 text-center text-muted">mail order license. 2022 YeokSam-dong,GangNam-gu, Seoul<a class="link-secondary" href="#" >[사업자정보확인]</a></li>
+   </ul>   
+   </div>
   </footer>
 </div>
+
