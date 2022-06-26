@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #666;
+}
+
+.wrapper2 {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  padding: 50px 0;
+  font-weight: normal;
+  font-size: 4em;
+  letter-spacing: 10px;
+}
+
+li {
+  list-style: none;
+  float: left;
+}
+
+
+.flex-menu {
+  display: flex; 
+}
+
+.flex-menu li {
+  width: 100%;
+}

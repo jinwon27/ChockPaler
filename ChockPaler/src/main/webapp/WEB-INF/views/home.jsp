@@ -7,64 +7,94 @@
 		li{
 			display: inline-block;
 		}
+		.pagination{
+			justify-content : center;
+		}
+		.card{
+   			animation-duration : 0.6s; 
+		}
+		
+		.carousel-item{
+			background-color: #cecece;
+		}
+		
+		.carousel-item img{
+			/* fill | contain | cover | scale-down | none(default) */
+			object-fit: contain;
+		}
+		.page-item.active .page-link {
+			background-color: gray;
+			border-color: black;
+		}
 	</style>
-	<title>/home.jsp</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 <body>
-	<h1> 프로젝트 페이지 </h1>
-	<!-- Navbar -->
-	<!-- <br /> -->
-	<!-- ${usersDto.name } 님 환영합니다 if(session.id == usersDto.id) -->
-	<c:choose>
-		<c:when test="${ empty sessionScope.id}">
-			<a href="${pageContext.request.contextPath}/users/loginform.do">로그인</a>
-			<a href="${pageContext.request.contextPath}/users/signupform.do">회원가입</a>
-		</c:when>
-		<c:otherwise>
-			<p>
-				${sessionScope.id }님 로그인중... 
-				<a href="${pageContext.request.contextPath}/users/logout.do">로그아웃</a>
-			</p>
-		</c:otherwise>
-	</c:choose>
-
-	<a href="${pageContext.request.contextPath }/users/info.do">마이페이지</a>
-	<a href="${pageContext.request.contextPath }/users/userorder.do">장바구니</a>
-	<a href="${pageContext.request.contextPath }/shop/orderinquiry.do">주문배송조회</a>
-	<a href="${pageContext.request.contextPath }/items/uploadform.do">자, 신상 팔아볼까?</a>
-
-	<br />
+	
 	<div class="container">
-		<form action="${pageContext.request.contextPath }/views/items/searchItems.do">
-			<input type="text" placeholder="검색어 입력..."/>
-			<button type="submit">검색</button>
-		</form>
-	</div>
-	<br />  <!-- div는 block 요소라 <br /> 이 필요없던가 ? -->
+		<!-- 여기서부터 진원님 -->
+		<jsp:include page="/WEB-INF/views/include/navbar.jsp"></jsp:include>
+		<jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
 	
-	<h2>
-		<span> ITEMS </span>
-	</h2>
-	<div id="underline"></div>
-	<ul class="itemList">
-		<!-- 반복문 -->
-		<c:forEach var="tmp" items="${itemList }" step="1" varStatus="status" >
-			<li>
-				<div>
-					<div>
-						<a href="상품 이미지경로"></a>
-					</div>
+		<!-- 0624 진원님 여기까지 -->
+		
+		
+		<div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
+			<div class="carousel-indicators">
+				<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+				<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+				<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+				<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+			</div>
+			
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+		      		<img src="${pageContext.request.contextPath }/images/1.jpg" class="d-block w-100" width="600" height="600">
+		    	</div>
+		    	<div class="carousel-item">
+		      		<img src="${pageContext.request.contextPath }/images/2.jpg" class="d-block w-100" width="600" height="600">
+		    	</div>
+			    <div class="carousel-item">
+			      	<img src="${pageContext.request.contextPath }/images/3.jpg" class="d-block w-100" width="600" height="600">
+			    </div>
+			    <div class="carousel-item">
+			      	<img src="${pageContext.request.contextPath }/images/4.jpg" class="d-block w-100" width="600" height="600">
+			    </div>
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			    <span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+			    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			    <span class="visually-hidden">Next</span>
+			</button>
+		</div>
+		
+		<h2>
+			<span> ITEMS </span>
+		</h2>
+		<div class="row">
+			<c:forEach var="tmp" items="${itemList }" step="1" varStatus="status" >
+				<div class="col-12 col-md-6 col-lg-4">
+					<div class="card mb-3 animate__animated animate__fadeIn" id="itemsDiv">
 					<!-- <a href="상품 간단설명된 이미지 경로"></a>  -->
-					<p>분류 : ${tmp.item_type }</p>
-					<p>no : ${tmp.item_num }</p>
-					<p>${tmp.name }</p>
-					<p>${tmp.detail }</p>
-					<p>${tmp.price } 원</p>
+						<a href="${pageContext.request.contextPath }/items/iteminfo.do?num=${tmp.item_num }">
+							<div class="img-wrapper">
+								<img class="card-img-top" src="${pageContext.request.contextPath }${tmp.img}"/>
+							</div>
+						</a>
+						<div class="card-body">
+							<p>분류 : ${tmp.item_type }</p>
+							<p>no : ${tmp.item_num }</p>
+							<p>${tmp.name }</p>
+							<p>${tmp.detail }</p>
+							<p>${tmp.price } 원</p>
+						</div>		
+					</div>
 				</div>
-			</li>
 		</c:forEach>
-	</ul>
-	
+	</div>
 	
 	<div id="pageId">
 		<!-- 처음페이지로 이동 : 현재 페이지가 1보다 크면 [처음] 하이퍼링크를 화면에 출력 -->
@@ -100,5 +130,16 @@
 		</c:if>
 	</div>
 	<!-- 웹 하단부 info -->
+	<%@include file="/WEB-INF/views/include/footer.jsp" %>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+

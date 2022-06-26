@@ -7,11 +7,17 @@
 	<typeAliases>
 		<typeAlias type="com.brave.chockpaler.users.dto.UsersDto" alias="usersDto"/>
 		<typeAlias type="com.brave.chockpaler.userorder.dto.UserOrderDto" alias="userorderDto"/>
+		<typeAlias type="com.brave.chockpaler.items.dto.ItemsDto" alias="itemsDto"/>
+		<typeAlias type="com.brave.chockpaler.basket.dto.BasketDto" alias="basketDto"/>
 	</typeAliases>
 	<!-- 필요한 Mapper xml 등록하기  -->
 	<mappers>
 		<mapper resource="com/brave/chockpaler/mybatis/UsersMapper.xml"/>
 		<mapper resource="com/brave/chockpaler/mybatis/UserOrderMapper.xml"/>
 		<mapper resource="com/brave/chockpaler/mybatis/ItemsMapper.xml"/>
+		<mapper resource="com/brave/chockpaler/mybatis/OrderInquiryMapper.xml"/>
+		<mapper resource="com/brave/chockpaler/mybatis/ReviewMapper.xml"/>
+		<mapper resource="com/brave/chockpaler/mybatis/BasketMapper.xml"/>
+		<mapper resource="com/brave/chockpaler/mybatis/NoticeMapper.xml"/>
 	</mappers>
  </configuration> 

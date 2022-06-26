@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+a {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  text-decoration: none;
+  color: #666;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+
+
+
+

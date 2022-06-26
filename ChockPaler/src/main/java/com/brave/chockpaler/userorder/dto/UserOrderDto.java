@@ -1,57 +1,71 @@
 package com.brave.chockpaler.userorder.dto;
 
 public class UserOrderDto {
-	private int item_num;
-	private String item_type;
+	private int num;
+	private String id;
 	private String name;
+	private String item;
+	private int count;
 	private int price;
-	private String img;
-	
 	
 	public UserOrderDto() {}
-	
-	
-	
-	public UserOrderDto(int item_num, String item_type, String name, int price, String img) {
+
+	public UserOrderDto(int num, String id, String name, String item, int count, int price) {
 		super();
-		this.item_num = item_num;
-		this.item_type = item_type;
+		this.num = num;
+		this.id = id;
 		this.name = name;
+		this.item = item;
+		this.count = count;
 		this.price = price;
-		this.img = img;
 	}
 
+	public int getNum() {
+		return num;
+	}
 
+	public void setNum(int num) {
+		this.num = num;
+	}
 
-	public int getItem_num() {
-		return item_num;
+	public String getId() {
+		return id;
 	}
-	public void setItem_num(int item_num) {
-		this.item_num = item_num;
+
+	public void setId(String id) {
+		this.id = id;
 	}
-	public String getItem_type() {
-		return item_type;
-	}
-	public void setItem_type(String item_type) {
-		this.item_type = item_type;
-	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public String getItem() {
+		return item;
+	}
+
+	public void setItem(String item) {
+		this.item = item;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
 	public int getPrice() {
 		return price;
 	}
+
 	public void setPrice(int price) {
 		this.price = price;
-	}
-	public String getImg() {
-		return img;
-	}
-	public void setImg(String img) {
-		this.img = img;
 	}
 	
 	

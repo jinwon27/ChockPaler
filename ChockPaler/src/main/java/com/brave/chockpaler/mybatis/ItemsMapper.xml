@@ -1,24 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="ItemsMapper">
-	<select id="getData" resultType="com.brave.chockpaler.items.dto.ItemsDto" parameterType="int">
+<mapper namespace="Items">
+	<sql id="searchCondition">
+		<choose>
+			<when test="item_type == ''">
+				WHERE 1=1
+			</when>
+			<when test="item_type == 'cookie'">
+				WHERE item_type = 'cookie'
+			</when>
+			<when test="item_type == 'beverage'">
+				WHERE item_type = 'beverage'
+			</when>
+		</choose>
+	</sql>
+	
+	<insert id="insert" parameterType="itemsDto">
+		INSERT INTO items
+		(item_num, item_type, name, detail, price, img, remain_count)
+		VALUES (items_seq.NEXTVAL,#{item_type},#{name},#{detail},#{price}, #{img}, #{remain_count})
+	</insert>
+
+	<select id="getData" resultType="itemsDto" parameterType="int">
 		SELECT * FROM items
-		WHERE num = #{num }
+		WHERE item_num = #{num }
 	</select>
 	
-	<select id="getList" resultType="com.brave.chockpaler.items.dto.ItemsDto" parameterType="com.brave.chockpaler.util.pageUtil">
+	<select id="getList" resultType="itemsDto" parameterType="Map">
 		SELECT *
 		FROM
 			(SELECT result1.*, ROWNUM AS rnum
 			FROM
-				(SELECT item_type, item_num, name, detail, price, regdate, remain_count
-					FROM items
-					ORDER BY item_num DESC) result1)
-		WHERE rnum BETWEEN #{pageBegin} AND #{pageEnd}
+				(SELECT item_type, item_num, name, detail, img, price, regdate, remain_count
+				FROM items
+				<include refid="searchCondition"/>
+				ORDER BY item_num DESC) result1)
+		WHERE rnum BETWEEN #{pUtil.pageBegin} AND #{pUtil.pageEnd}
 	</select>
 	
 	<select id="getItemCount" resultType="int">
 		SELECT COUNT(*) FROM
 		items
 	</select>
+	
+	<update id="updateViewCount" parameterType="int">
+		UPDATE items SET
+		viewcount = viewcount+1
+		WHERE item_num = #{num }
+	</update>
 </mapper>

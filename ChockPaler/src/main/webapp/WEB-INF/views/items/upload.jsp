@@ -9,8 +9,8 @@
 </head>
 <body>
 	<script>
-		alert("doenrok.");
-		location.href = "${pageContext.request.contextPath }/home.jsp";
+		alert("등록 되었습니다!");
+		location.href = "${pageContext.request.contextPath }/home.do";
 	</script>
 </body>
 </html>

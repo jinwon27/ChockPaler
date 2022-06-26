@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="review">
+
+	<insert id="insert" parameterType="com.brave.chockpaler.review.dto.ReviewDto">
+		INSERT INTO review(num, id, item_num, content, regdate)
+		<choose>
+			<when test="id == ''">
+				VALUES(review_seq.NEXTVAL, '익명', #{item_num}, #{content}, sysdate)
+			</when>
+			<otherwise>
+				VALUES(review_seq.NEXTVAL, #{id}, #{item_num}, #{content}, sysdate)
+			</otherwise>
+		</choose>
+	</insert>
+	
+	<select id="select" resultType="com.brave.chockpaler.review.dto.ReviewDto" parameterType="com.brave.chockpaler.util.reviewPageUtil">
+		SELECT *
+		FROM
+			(SELECT result1.*, ROWNUM AS rnum
+			FROM
+				(SELECT num, id, item_num, content, regdate
+				FROM review
+				ORDER BY num DESC) result1)
+		WHERE rnum BETWEEN #{pageBegin} AND #{pageEnd}
+	</select>
+	
+	<select id="getCount" resultType="int">
+		SELECT COUNT(*) FROM
+		review
+	</select>
+	
+</mapper>
