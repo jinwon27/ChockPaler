@@ -9,7 +9,7 @@
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/header.css" />
    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/footer.css" />
-   <%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/navbar.css" /> --%>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/navbar.css" /> 
    <style>
       li{
          display: inline-block;
@@ -40,55 +40,8 @@
    
    <div class="container">
       <!-- 여기서부터 진원님 -->
-      <%-- <jsp:include page="/WEB-INF/views/include/navbar.jsp"></jsp:include> --%>
+      <jsp:include page="/WEB-INF/views/include/navbar.jsp"></jsp:include> 
       <jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
-      <!-- Navbar -->
-      <!-- <br /> -->
-      <!-- ${usersDto.name } 님 환영합니다 if(session.id == usersDto.id) -->
-      <!-- <ul class="nav justify-content-end">
-         <c:choose>
-            <c:when test="${ empty sessionScope.id}">
-               <li class="nav-item">
-                  <a class="nav-link active" href="${pageContext.request.contextPath}/users/loginform.do">로그인</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link active" href="${pageContext.request.contextPath}/users/signupform.do">회원가입</a>
-               </li>
-            </c:when>
-            <c:otherwise>
-               <p>
-                  ${sessionScope.id }님 로그인중... 
-               </p>
-               <li class="nav-item">
-                  <a class="nav-link active" href="${pageContext.request.contextPath }/users/info.do">마이페이지</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link active" href="${pageContext.request.contextPath}/users/logout.do">로그아웃</a>                  
-               </li>
-            </c:otherwise>
-         </c:choose>
-      </ul>
-      <ul class="nav justify-content-end">
-         <li class="nav-item">
-            <a class="nav-link active" href="${pageContext.request.contextPath }/userorder/userorderform.do?name=${dto.id }">장바구니</a>         
-         </li>
-         <li class="nav-item">
-            <a class="nav-link active" href="${pageContext.request.contextPath }/orderinquiry/orderinquiry.do?id=${id }">주문배송조회</a>         
-         </li>
-         <li class="nav-item">
-            <a class="nav-link active" href="${pageContext.request.contextPath }/items/uploadform.do">자, 신상 팔아볼까?</a>   
-         </li>
-      </ul>
-
-      <form action="${pageContext.request.contextPath }/views/items/searchItems.do">
-         <div class="input-group mb-3 input-sm w-25 p-3">
-              <input type="text" class="form-control input-sm" placeholder="검색어를 입력하세요.." aria-label="Recipient's username" aria-describedby="button-addon2">
-              <button class="btn btn-outline-success" type="submit" id="button-addon2">검색</button>
-         </div>
-      </form>
-      -->
-      <!-- navbar영역 -->
-   
       <!-- 0624 진원님 여기까지 -->
       
       
