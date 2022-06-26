@@ -9,7 +9,7 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/header.css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/footer.css" />
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/navbar.css" />
+	<%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/navbar.css" /> --%>
 	<style>
 		li{
 			display: inline-block;
@@ -40,7 +40,7 @@
 	
 	<div class="container">
 		<!-- 여기서부터 진원님 -->
-		<jsp:include page="/WEB-INF/views/include/navbar.jsp"></jsp:include>
+		<%-- <jsp:include page="/WEB-INF/views/include/navbar.jsp"></jsp:include> --%>
 		<jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
 		<!-- Navbar -->
 		<!-- <br /> -->
@@ -125,7 +125,7 @@
 		</div>
 		
 		<h2>
-			<span> ITEMS </span>
+			<span> </span>
 		</h2>
 		<div class="row">
 			<c:forEach var="tmp" items="${itemList }" step="1" varStatus="status" >
