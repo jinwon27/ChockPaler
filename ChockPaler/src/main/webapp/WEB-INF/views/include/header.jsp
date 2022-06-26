@@ -21,11 +21,11 @@
 							<td>|</td>
 						</c:when>
 						<c:otherwise>
-							<td><a href="#">로그아웃</a></td>
+							<td><a href="${pageContext.request.contextPath}/users/logout.do">로그아웃</a></td>
 							<td>|</td>
-							<td><a href="#">마이페이지</a></td>
+							<td><a href="${pageContext.request.contextPath}/users/info.do">마이페이지</a></td>
 							<td>|</td>
-							<td><a href="#">장바구니</a></td>
+							<td><a href="${pageContext.request.contextPath}/basket/basketList.do">장바구니</a></td>
 							<td>|</td>
 						</c:otherwise>
 					</c:choose>
@@ -64,10 +64,8 @@
 			<li>
 				<!-- 검색 -->
 				<div style="margin-left: 10%;" align="right">
-					<form method="post" action="/stu/shop/openMainSearch.do"
-						id="searchbox5">
-						<input id="search" name="keyword" type="text" size="40"
-							placeholder="" value="" />
+					<form method="post" action="/items/searchTarget.do" id="searchbox5">
+						<input id="search" name="name" type="text" size="40" />
 					</form>
 				</div>
 			</li>

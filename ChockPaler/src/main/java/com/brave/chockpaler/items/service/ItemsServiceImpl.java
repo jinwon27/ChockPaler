@@ -31,10 +31,12 @@ public class ItemsServiceImpl implements ItemsService {
 	}
 
 	@Override
-	public List<ItemsDto> getItemList(pageUtil pUtil, String item_type) {
+	public List<ItemsDto> getItemList(pageUtil pUtil, String item_type, String searchWord, int viewCount) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("pUtil", pUtil);
 		map.put("item_type", item_type);
+		map.put("searchWord", searchWord);
+		map.put("viewCount", viewCount);
 		return dao.getList(map);
 	}
 

@@ -17,8 +17,8 @@
 	
 	<insert id="insert" parameterType="itemsDto">
 		INSERT INTO items
-		(item_num, item_type, name, detail, price, img, remain_count)
-		VALUES (items_seq.NEXTVAL,#{item_type},#{name},#{detail},#{price}, #{img}, #{remain_count})
+		(item_num, item_type, name, detail, price, img, remain_count, viewcount)
+		VALUES (items_seq.NEXTVAL,#{item_type},#{name},#{detail},#{price}, #{img}, #{remain_count}, 0)
 	</insert>
 
 	<select id="getData" resultType="itemsDto" parameterType="int">
@@ -31,11 +31,16 @@
 		FROM
 			(SELECT result1.*, ROWNUM AS rnum
 			FROM
-				(SELECT item_type, item_num, name, detail, img, price, regdate, remain_count
+				(SELECT item_type, item_num, name, detail, img, price, regdate, remain_count, viewcount
 				FROM items
 				<include refid="searchCondition"/>
 				ORDER BY item_num DESC) result1)
 		WHERE rnum BETWEEN #{pUtil.pageBegin} AND #{pUtil.pageEnd}
+		<choose>
+			<when test="viewcount == 1">
+				ORDER BY viewcount DESC
+			</when>
+		</choose>
 	</select>
 	
 	<select id="getItemCount" resultType="int">
