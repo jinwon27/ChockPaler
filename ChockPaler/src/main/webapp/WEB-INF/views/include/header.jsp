@@ -45,7 +45,7 @@
 <!-- 쿠키 및 음료  -->
 <div class="pagemid">
 	<div class="wrapper2">
-		<I><h1>
+		<I><h1 class="mainlogo" >
 				<a href="${pageContext.request.contextPath}/home.do">ChockPaler</a>
 			</h1></I>
 

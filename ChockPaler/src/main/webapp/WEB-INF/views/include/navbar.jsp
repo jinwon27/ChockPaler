@@ -23,6 +23,14 @@
           			<li>
           				<a href="${pageContext.request.contextPath}/users/logout.do" class="nav-link">로그아웃</a>
 					</li>
+					<!-- 계정명이 admin 일시 상품등록하기 -->
+					<c:choose>
+						<c:when test="${sessionScope.id == 'admin' }">
+							<li class="nav-item">
+								<a class="nav-link" href="${pageContext.request.contextPath}/items/uploadform.do">상품등록</a>
+							</li>
+						</c:when>
+					</c:choose>
           		</c:otherwise>
 				</c:choose>
 					<li class="nav-item">
@@ -39,6 +47,7 @@
 							</svg>
            				</a>
           			</li>
+          			
           	 		<!-- <li class="nav-item">
            			 <a class="nav-link" href="#">
            			 	<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
