@@ -219,24 +219,24 @@ ul {
 			<div class="row">
 				<div class="col-lg-10 offset-lg-1">
 					<div class="cart_container">
-						<form action="">
+						<form action="${pageContext.request.contextPath }/buy/buyform.do">
 							<div class="cart_title">Shopping Cart</div>
 							<div class="cart_items">
 								<ul class="cart_list">
 									<c:forEach var="tmp" items="${list}" step="1">
 										<li class="cart_item clearfix">
 											<div class="cart_item_image">
-												<img src="${pageContext.request.contextPath }${tmp.img}" />
+												<img src="${pageContext.request.contextPath }${tmp.img}" name="img"/>
 											</div>
 											<div
 												class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
 												<div class="cart_item_name cart_info_col">
 													<div class="cart_item_title">
-														<label for="num">Num</label>
+														<label for="item_num">Num</label>
 													</div>
 													<div class="cart_item_text">${tmp.item_num }
-														<input class="form-control" type="text" id="num"
-															name="num" value="${tmp.item_num }" disabled="disabled"
+														<input class="form-control" type="text" id="item_num"
+															name="item_num" value="${tmp.item_num }" disabled="disabled"
 															hidden="true">
 													</div>
 												</div>
@@ -283,7 +283,7 @@ ul {
 													<div class="cart_item_title">Delete</div>
 													<div class="cart_item_text">
 														<a
-															href="${pageContext.request.contextPath }/basket/delete.do">
+															href="${pageContext.request.contextPath }/basket/delete.do?item_num=${tmp.item_num}">
 															<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
 															  <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
 															</svg>
@@ -306,8 +306,8 @@ ul {
 							<div class="cart_buttons">
 								<button type="button" class="button cart_button_clear">쇼핑
 									계속하기</button>
-								<button type="submit" class="button cart_button_checkout">장바구니
-									담기</button>
+								<button type="submit" class="button cart_button_checkout">구매하기
+								</button>
 							</div>
 						</form>
 					</div>

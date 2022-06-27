@@ -44,6 +44,7 @@
 </style>
 </head>
 <body class="text-center">
+<jsp:include page="/WEB-INF/views/include/navbar.jsp"></jsp:include>
 	<main class="form-signin w-100 m-auto">
 		<form action="${pageContext.request.contextPath}/users/login.do" method="post">
 			<c:choose>
@@ -55,7 +56,7 @@
 				</c:otherwise>
 			</c:choose>   
 	   
-			<img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+			<img class="mb-4" src="${pageContext.request.contextPath}/images/쿠키이미지.png" alt="" width="72" height="57">
 			<h1 class="h3 mb-3 fw-normal">로그인</h1>
 	
 			<div class="form-floating">

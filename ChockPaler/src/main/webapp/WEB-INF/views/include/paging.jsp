@@ -2,9 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <body>
-	<div id="pageId">
+	<div id="pageId" style="margin-top:30px;">
          <!-- 처음페이지로 이동 : 현재 페이지가 1보다 크면 [처음] 하이퍼링크를 화면에 출력 -->
-         <ul class="pagination">
+         <ul class="pagination" >
             <c:if test="${pageUtil.curBlock > 1}">
                <li class="page-item">
                   <a class="page-link" href="${pageContext.request.contextPath}/home.do?curPage=1">처음</a>

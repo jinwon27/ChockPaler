@@ -5,8 +5,10 @@
 	<!-- 로그인 및 마이페이지 검색 navbar  -->
 <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white">
 	<div class="container-fluid">
-		<a href="">
-			<svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+		<a href="${pageContext.request.contextPath}/home.do">
+			<svg class="bi me-2" width="40" height="32">
+				<img src="${pageContext.request.contextPath}/images/쿠키이미지.png" style="width: 50px; height: 50px;"/>
+			</svg>
 		</a>
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<ul class="navbar-nav ms-auto mb-2 mb-md-0">

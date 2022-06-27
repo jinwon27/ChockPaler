@@ -76,31 +76,26 @@
              <span class="visually-hidden">Next</span>
          </button>
       </div>
-      
       <h2>
          <span> </span>
       </h2>
-      <div class="row">
-         <c:forEach var="tmp" items="${itemList }" step="1" varStatus="status" >
-            <div class="col-12 col-md-6 col-lg-4">
-               <div class="card mb-3 animate__animated animate__fadeIn" id="itemsDiv">
-               <!-- <a href="상품 간단설명된 이미지 경로"></a>  -->
-                  <a href="${pageContext.request.contextPath }/items/iteminfo.do?num=${tmp.item_num }">
-                     <div class="img-wrapper">
-                        <img class="card-img-top" src="${pageContext.request.contextPath }${tmp.img}"/>
-                     </div>
-                  </a>
-                  <div class="card-body">
-                     <p>분류 : ${tmp.item_type }</p>
-                     <p>no : ${tmp.item_num }</p>
-                     <p>${tmp.name }</p>
-                     <p>${tmp.detail }</p>
-                     <p>${tmp.price } 원</p>
-                  </div>      
-               </div>
+
+		<div class="container container-mt" style="margin-top:30px;">
+    		<div class="row">
+        	<c:forEach var="tmp" items="${itemList }" step="1" varStatus="status" >
+            	<div class="col-md-4 margin">
+                	<div class="card">
+                    	<a href="${pageContext.request.contextPath }/items/iteminfo.do?num=${tmp.item_num }">
+                        	<img src="${tmp.img}" class="card-img-top" height="300" >
+                    	</a> 
+                        <div class="card-body">
+                            <p class="card-title">${tmp.name}</p> 
+                            <h3 class="card-title text-secondary">\ ${tmp.price} </h3>
+                        </div>
+                </div>
             </div>
-         </c:forEach>
-      </div>
+        	</c:forEach>
+		</div>
       <c:choose>
       	<c:when test="!isSearchWord">
       		<%@include file="/WEB-INF/views/include/paging.jsp" %>
@@ -109,6 +104,7 @@
       		<%@include file="/WEB-INF/views/include/paging2.jsp" %>
       	</c:otherwise>
       </c:choose>
+   </div>
    </div>
    <!-- 웹 하단부 info -->
    <%@include file="/WEB-INF/views/include/footer.jsp" %>
