@@ -32,7 +32,6 @@ public class BasketController {
 			HttpServletRequest request) {
 		
 		service.getGoods(session, mView);
-		mView.setViewName("basket/basketList");
 		return mView;
 	}
 }

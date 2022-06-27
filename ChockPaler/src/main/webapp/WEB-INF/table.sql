@@ -97,3 +97,27 @@ title VARCHAR2(100), -- 제목
 content CLOB, -- 내용
 regdate DATE -- 날짜
 );
+
+CREATE TABLE buy(
+num NUMBER PRIMARY KEY, -- 공지번호
+title VARCHAR2(100), -- 제목
+content CLOB, -- 내용
+regdate DATE -- 날짜
+);
+
+-- 구매하기 태이블(장바구니 아이템 insert) --
+CREATE TABLE buy(
+order_num NUMBER,
+id VARCHAR2(100),
+addr VARCHAR2(100),
+client_name VARCHAR2(50)
+);
+
+ALTER TABLE buy add
+name VARCHAR2(100);
+
+ALTER TABLE buy add
+count NUMBER;
+
+ALTER TABLE buy add
+price NUMBER;

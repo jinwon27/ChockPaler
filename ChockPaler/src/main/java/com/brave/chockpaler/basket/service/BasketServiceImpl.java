@@ -32,5 +32,6 @@ public class BasketServiceImpl implements BasketService{
 		}
 		mView.addObject("sum", sum);
 		mView.addObject("list", list);
+		mView.setViewName("basket/basketList");
 		return mView;
 	}}
