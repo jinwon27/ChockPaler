@@ -55,6 +55,7 @@
 		</c:otherwise>
 	</c:choose>
 	<button type="button" id="btnList">상품목록</button>
-	
+   	<!-- 웹 하단부 info -->
+   	<%@include file="/WEB-INF/views/include/footer.jsp" %>
 </body>
 </html>

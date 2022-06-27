@@ -17,8 +17,8 @@
 	
 	<insert id="insert" parameterType="itemsDto">
 		INSERT INTO items
-		(item_num, item_type, name, detail, price, img, remain_count)
-		VALUES (items_seq.NEXTVAL,#{item_type},#{name},#{detail},#{price}, #{img}, #{remain_count})
+		(item_num, item_type, name, detail, price, img, remain_count, viewcount)
+		VALUES (items_seq.NEXTVAL,#{item_type},#{name},#{detail},#{price}, #{img}, #{remain_count}, 0)
 	</insert>
 
 	<select id="getData" resultType="itemsDto" parameterType="int">
@@ -31,16 +31,28 @@
 		FROM
 			(SELECT result1.*, ROWNUM AS rnum
 			FROM
-				(SELECT item_type, item_num, name, detail, img, price, regdate, remain_count
+				(SELECT item_type, item_num, name, detail, img, price, regdate, remain_count, viewcount
 				FROM items
 				<include refid="searchCondition"/>
 				ORDER BY item_num DESC) result1)
 		WHERE rnum BETWEEN #{pUtil.pageBegin} AND #{pUtil.pageEnd}
+		<if test="viewcount == 1">
+			ORDER BY viewcount DESC
+		</if>
 	</select>
 	
-	<select id="getItemCount" resultType="int">
+	<select id="getItemCount" resultType="int" parameterType="Map">
 		SELECT COUNT(*) FROM
 		items
+		<if test="item_type != ''">
+			WHERE item_type = #{item_type}
+		</if>
+	</select>
+	
+	<select id="getSearchCount" resultType="int" parameterType="Map">
+		SELECT COUNT(*) FROM
+		items
+		WHERE name LIKE '%' | | #{name} | | '%'
 	</select>
 	
 	<update id="updateViewCount" parameterType="int">
@@ -48,4 +60,16 @@
 		viewcount = viewcount+1
 		WHERE item_num = #{num }
 	</update>
+	
+	<select id="getSearchList" parameterType="Map" resultType="itemsDto">
+		SELECT *
+		FROM
+			(SELECT result1.*, ROWNUM AS rnum
+			FROM
+				(SELECT item_type, item_num, name, detail, img, price, regdate, remain_count, viewcount
+				FROM items
+				WHERE name LIKE '%' || #{name} || '%'
+				ORDER BY item_num DESC) result1)
+		WHERE rnum BETWEEN #{pUtil.pageBegin} AND #{pUtil.pageEnd}
+	</select>
 </mapper>

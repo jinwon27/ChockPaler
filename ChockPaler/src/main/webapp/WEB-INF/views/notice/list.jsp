@@ -81,5 +81,7 @@
 		
 		<button type="button" class="btn btn-outline-info" onclick="location.href='${pageContext.request.contextPath }/notice/add.do';">등록</button>
 	</div>
+   	<!-- 웹 하단부 info -->
+   	<%@include file="/WEB-INF/views/include/footer.jsp" %>
 </body>
 </html>

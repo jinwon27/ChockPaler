@@ -22,15 +22,17 @@ public class HomeController {
 	private ItemsService service;
 	
 	@RequestMapping("/home")
-	public String home(HttpServletRequest request, @RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="") String item_type) {
+	public String home(HttpServletRequest request, 
+						@RequestParam(defaultValue="1") int curPage, 
+						@RequestParam(defaultValue="") String item_type
+						) {
 		
+		pageUtil pUtil = new pageUtil(service.getItemCount(item_type), curPage);
 		
-		pageUtil pUtil = new pageUtil(service.getItemCount(), curPage);
 		request.setAttribute("startPageNum", pUtil.getPageBegin());
 		request.setAttribute("endPageNum", pUtil.getPageEnd());
-		request.setAttribute("pageUtil", pUtil);
+		request.setAttribute("pageUtil", pUtil); 
 		request.setAttribute("itemList", service.getItemList(pUtil, item_type));
-		
 		
 		return "home";
 	}

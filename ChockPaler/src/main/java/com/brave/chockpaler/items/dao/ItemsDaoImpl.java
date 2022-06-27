@@ -28,8 +28,13 @@ public class ItemsDaoImpl implements ItemsDao {
 	}
 
 	@Override
-	public int getCount() {
-		return session.selectOne("Items.getItemCount");
+	public int getCount(Map<String, Object> map) {
+		return session.selectOne("Items.getItemCount", map);
+	}
+	
+	@Override
+	public int getSearchCount(Map<String, Object> map) {
+		return session.selectOne("Items.getSearchCount", map);
 	}
 
 	@Override
@@ -46,5 +51,10 @@ public class ItemsDaoImpl implements ItemsDao {
 	@Override
 	public void setViewCount(int num) {
 		session.update("Items.updateViewCount", num);
+	}
+
+	@Override
+	public List<ItemsDto> getSearchList(Map<String, Object> map) {
+		return session.selectList("Items.getSearchList", map);
 	}
 }

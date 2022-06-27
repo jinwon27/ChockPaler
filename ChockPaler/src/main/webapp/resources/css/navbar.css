@@ -4,6 +4,8 @@
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
 
+
+
 a {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -13,7 +15,8 @@ a {
   margin-right: 8px;
 }
 
-
-
+.container-fluid{
+	height: 50px;
+}
 
 

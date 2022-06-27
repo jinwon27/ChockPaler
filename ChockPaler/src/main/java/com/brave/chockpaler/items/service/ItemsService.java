@@ -13,11 +13,15 @@ public interface ItemsService {
 	
 	public List<ItemsDto> getItemList(pageUtil util, String item_type);
 	
-	public int getItemCount();
+	public int getItemCount(String item_type);
+	
+	public int getSearchCount(String name);
 
 	public void insert(ItemsDto dto, HttpServletRequest request);
 	
 	public void delete(int num);
 	
 	public void addViewCount(int num);
+	
+	public List<ItemsDto> getSearchList(pageUtil pUtil, String name);
 }
