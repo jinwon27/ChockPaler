@@ -2,6 +2,8 @@ package com.brave.chockpaler.buy.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,11 +17,11 @@ import com.brave.chockpaler.basket.dto.Baskets;
 public class BuyController {
 
 	@RequestMapping("/buy/buyform")
-	public ModelAndView buyForm(@RequestBody Baskets baskets, 
+	public ModelAndView buyForm(Baskets baskets, 
 										ModelAndView mView, 
 										@RequestParam("sum") int sum) {
-		
-		mView.addObject("list", baskets);
+
+		mView.addObject("baskets", baskets.getList());
 		mView.addObject("sum", sum);
 		mView.setViewName("buy/buyform");
 		return mView;
