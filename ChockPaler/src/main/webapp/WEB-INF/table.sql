@@ -121,3 +121,10 @@ count NUMBER;
 
 ALTER TABLE buy add
 price NUMBER;
+
+--주문하기 테이블--
+CREATE TABLE buy(
+order_num NUMBER primary key,	--주문번호
+id VARCHAR2(100),	--주문자 아이디
+addr VARCHAR2(100) --배송지
+);

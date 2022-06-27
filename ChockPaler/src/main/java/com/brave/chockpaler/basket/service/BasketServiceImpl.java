@@ -19,7 +19,14 @@ public class BasketServiceImpl implements BasketService{
 		
 	@Override
 	public void addGoods(BasketDto dto) {
-		dao.insert(dto);
+		if(dao.getData(dto.getItem_num()) == null) {
+			dao.insert(dto);
+		}
+		else {
+			dao.update(dto);
+		}
+		
+		
 	}
 
 	@Override
@@ -34,4 +41,10 @@ public class BasketServiceImpl implements BasketService{
 		mView.addObject("list", list);
 		mView.setViewName("basket/basketList");
 		return mView;
+	}
+
+	@Override
+	public void removeGoods(int item_num) {
+		dao.delete(item_num);
+		
 	}}

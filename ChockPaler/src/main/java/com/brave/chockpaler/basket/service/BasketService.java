@@ -11,4 +11,5 @@ import com.brave.chockpaler.basket.dto.BasketDto;
 public interface BasketService {
 	public void addGoods(BasketDto dto);
 	public ModelAndView getGoods(HttpSession session, ModelAndView mView);
+	public void removeGoods(int item_num);
 }
