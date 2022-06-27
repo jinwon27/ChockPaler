@@ -54,7 +54,7 @@
 		<ul class="flex-menu">
 			<li>&nbsp;</li>
 			<li><a
-				href="${pageContext.request.contextPath}/home.do?viewcount=1">BEST</a></li>
+				href="${pageContext.request.contextPath}/home.do">BEST</a></li>
 			<li><a
 				href="${pageContext.request.contextPath}/home.do?item_type='cookie'">COOKIE</a></li>
 			<li><a
@@ -64,7 +64,7 @@
 			<li>
 				<!-- 검색 -->
 				<div style="margin-left: 10%;" align="right">
-					<form method="post" action="/items/searchTarget.do" id="searchbox5">
+					<form action="${pageContext.request.contextPath}/items/searchTarget.do" id="searchbox5">
 						<input id="search" name="name" type="text" size="40" />
 					</form>
 				</div>

@@ -36,11 +36,9 @@
 				<include refid="searchCondition"/>
 				ORDER BY item_num DESC) result1)
 		WHERE rnum BETWEEN #{pUtil.pageBegin} AND #{pUtil.pageEnd}
-		<choose>
-			<when test="viewcount == 1">
-				ORDER BY viewcount DESC
-			</when>
-		</choose>
+		<if test="viewcount == 1">
+			ORDER BY viewcount DESC
+		</if>
 	</select>
 	
 	<select id="getItemCount" resultType="int">
@@ -48,9 +46,27 @@
 		items
 	</select>
 	
+	<select id="getSearchCount" resultType="int" parameterType="Map">
+		SELECT COUNT(*) FROM
+		items
+		WHERE name LIKE '%' | | #{name} | | '%'
+	</select>
+	
 	<update id="updateViewCount" parameterType="int">
 		UPDATE items SET
 		viewcount = viewcount+1
 		WHERE item_num = #{num }
 	</update>
+	
+	<select id="getSearchList" parameterType="Map" resultType="itemsDto">
+		SELECT *
+		FROM
+			(SELECT result1.*, ROWNUM AS rnum
+			FROM
+				(SELECT item_type, item_num, name, detail, img, price, regdate, remain_count, viewcount
+				FROM items
+				WHERE name LIKE '%' || #{name} || '%'
+				ORDER BY item_num DESC) result1)
+		WHERE rnum BETWEEN #{pUtil.pageBegin} AND #{pUtil.pageEnd}
+	</select>
 </mapper>

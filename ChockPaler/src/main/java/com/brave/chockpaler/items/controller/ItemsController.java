@@ -74,9 +74,18 @@ public class ItemsController {
 	}
 	
 	@RequestMapping("/items/searchTarget")
-	public String searchList() {
+	public String searchList(@RequestParam("name") String name, HttpServletRequest request, @RequestParam(defaultValue="1") int curPage) {
 		
-		return null;
+		//curPage 파라미터로 받아와서 pageUtil 만들때 매개변수로 전달해야함
+		//일단 1로 줬음 바꿔야댐 귀찮
+		
+		pageUtil pUtil = new pageUtil(service.getSearchCount(name), curPage);
+		request.setAttribute("pageUtil", pUtil);
+		request.setAttribute("itemList", service.getSearchList(pUtil, name));
+		request.setAttribute("name", name);
+		request.setAttribute("isSearchWord", true);
+		
+		return "home";
 	}
 	
 }
