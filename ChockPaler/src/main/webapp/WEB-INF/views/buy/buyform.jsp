@@ -24,12 +24,14 @@
 			</thead>
 				<tbody>
 					<tr>
-						<td>
-							<img src="${pageContext.request.contextPath }${tmp.img}" />
-						</td>
-						<td>${dto.name }</td>
-						<td>${dto.count }</td>
-						<td>${dto.price }</td>
+						<c:forEach var="tmp" items="${list }">
+							<td>
+								<img src="${pageContext.request.contextPath }${tmp.img}" />
+							</td>
+							<td>${tmp.name }</td>
+							<td>${tmp.count }</td>
+							<td>${tmp.price }</td>
+						</c:forEach>
 					</tr>
 				</tbody>
 			<tfoot>

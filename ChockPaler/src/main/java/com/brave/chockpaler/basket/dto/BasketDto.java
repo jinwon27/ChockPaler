@@ -1,5 +1,7 @@
 package com.brave.chockpaler.basket.dto;
 
+import java.util.List;
+
 public class BasketDto {
 	private int item_num;
 	private String id;
@@ -8,15 +10,9 @@ public class BasketDto {
 	private int price;
 	private String img;
 	
-	//buy에서 쓸 dto
-	private int order_num;
-	private String addr;
-	private String client_name;
-	
 	public BasketDto() {}
 
-	public BasketDto(int item_num, String id, String name, int count, int price, String img, int order_num, String addr,
-			String client_name) {
+	public BasketDto(int item_num, String id, String name, int count, int price, String img) {
 		super();
 		this.item_num = item_num;
 		this.id = id;
@@ -24,9 +20,6 @@ public class BasketDto {
 		this.count = count;
 		this.price = price;
 		this.img = img;
-		this.order_num = order_num;
-		this.addr = addr;
-		this.client_name = client_name;
 	}
 
 	public int getItem_num() {
@@ -77,29 +70,4 @@ public class BasketDto {
 		this.img = img;
 	}
 
-	public int getOrder_num() {
-		return order_num;
-	}
-
-	public void setOrder_num(int order_num) {
-		this.order_num = order_num;
-	}
-
-	public String getAddr() {
-		return addr;
-	}
-
-	public void setAddr(String addr) {
-		this.addr = addr;
-	}
-
-	public String getClient_name() {
-		return client_name;
-	}
-
-	public void setClient_name(String client_name) {
-		this.client_name = client_name;
-	}
-
-	
 }
