@@ -21,12 +21,12 @@ public class BasketController {
 	@Autowired 
 	private BasketService service;
 	
-	@RequestMapping("/buy/buy")
-	public ModelAndView Buy(ModelAndView mView, HttpSession session, BasketDto dto, HttpServletRequest request) {
-		
-		mView.setViewName("buy/buy");
-		return mView;
-	}
+//	@RequestMapping("/buy/buy")
+//	public ModelAndView Buy(ModelAndView mView, HttpSession session, BasketDto dto, HttpServletRequest request) {
+//		
+//		mView.setViewName("buy/buy");
+//		return mView;
+//	}
 	
 	@RequestMapping("/basket/insert.do")
 	public ModelAndView authInsert(HttpSession session, ModelAndView mView, 
