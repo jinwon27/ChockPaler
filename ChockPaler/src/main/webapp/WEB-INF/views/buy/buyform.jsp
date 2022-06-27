@@ -24,7 +24,7 @@
 			</thead>
 				<tbody>
 					<tr>
-						<c:forEach var="tmp" items="${list }">
+						<c:forEach var="tmp" items="${baskets }">
 							<td>
 								<img src="${pageContext.request.contextPath }${tmp.img}" />
 							</td>
