@@ -18,8 +18,19 @@ public class BasketServiceImpl implements BasketService{
 	private BasketDao dao;
 		
 	@Override
-	public void addGoods(BasketDto dto) {
-		dao.insert(dto);
+	public boolean addGoods(BasketDto dto) {
+		boolean isInsert = true;
+		if(dao.getData(dto.getItem_num()) == null) {
+			dao.insert(dto);
+			return isInsert;
+		}
+		else {
+			
+			isInsert=false;
+			return isInsert;
+		}
+		
+		
 	}
 
 	@Override

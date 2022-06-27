@@ -1,5 +1,8 @@
 package com.brave.chockpaler.basket.controller;
 
+import java.util.List;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -18,11 +21,19 @@ public class BasketController {
 	@Autowired 
 	private BasketService service;
 	
+	@RequestMapping("/buy/buy")
+	public ModelAndView Buy(ModelAndView mView, HttpSession session, BasketDto dto, HttpServletRequest request) {
+		
+		mView.setViewName("buy/buy");
+		return mView;
+	}
+	
 	@RequestMapping("/basket/insert.do")
 	public ModelAndView authInsert(HttpSession session, ModelAndView mView, 
 			HttpServletRequest request, BasketDto dto) {
 		dto.setId((String)session.getAttribute("id"));
-		service.addGoods(dto);
+		boolean isInsert = service.addGoods(dto);
+		mView.addObject("isInsert", isInsert);
 		mView.setViewName("basket/insert");
 		return mView;
 	}
@@ -35,5 +46,6 @@ public class BasketController {
 		mView.setViewName("basket/basketList");
 		return mView;
 	}
+	
 	
 }

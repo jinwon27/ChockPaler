@@ -26,6 +26,12 @@ public class BasketDaoImpl implements BasketDao{
 		return list;
 	}
 
+	@Override
+	public BasketDto getData(int item_num) {
+		BasketDto dto = session.selectOne("basket.getData", item_num);
+		return dto;
+	}
+
 
 
 }

@@ -10,4 +10,18 @@
 		SELECT * FROM basket
 		WHERE id=#{id}
 	</select>
+	<insert id="buyInsert" parameterType="basketDto">
+		INSERT INTO buy
+		(order_num, id, addr)
+		VALUES()
+	</insert>
+	<select id="getData" parameterType="int" resultType="basketDto">
+		SELECT * FROM basket
+		WHERE item_num = #{item_num}
+	</select>
+	<update id="update" parameterType="">
+		UPDATE FROM basket
+		SET count += 
+		WHERE item_num = #{item_num}
+	</update>
 </mapper>
