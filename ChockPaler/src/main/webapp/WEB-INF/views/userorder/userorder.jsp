@@ -24,5 +24,7 @@
 			<button type="reset">취소</button>
 		</form>
 	</div>
+   	<!-- 웹 하단부 info -->
+   	<%@include file="/WEB-INF/views/include/footer.jsp" %>
 </body>
 </html>

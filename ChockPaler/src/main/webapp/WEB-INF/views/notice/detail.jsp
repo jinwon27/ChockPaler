@@ -30,5 +30,7 @@
 			<button class="btn btn-outline-primary" type="submit" disabled="disabled" class="updateBtn">수정</button>
 		</form>
 	</div>
+   	<!-- 웹 하단부 info -->
+   	<%@include file="/WEB-INF/views/include/footer.jsp" %>
 </body>
 </html>

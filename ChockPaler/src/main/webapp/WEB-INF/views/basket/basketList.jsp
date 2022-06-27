@@ -26,5 +26,7 @@
 		</div>
 	</c:forEach>
 	<h1><strong>총액 : ${sum}</strong></h1>
+   	<!-- 웹 하단부 info -->
+   	<%@include file="/WEB-INF/views/include/footer.jsp" %>
 </body>
 </html>
