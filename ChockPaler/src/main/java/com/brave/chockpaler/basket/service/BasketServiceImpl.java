@@ -18,16 +18,12 @@ public class BasketServiceImpl implements BasketService{
 	private BasketDao dao;
 		
 	@Override
-	public boolean addGoods(BasketDto dto) {
-		boolean isInsert = true;
+	public void addGoods(BasketDto dto) {
 		if(dao.getData(dto.getItem_num()) == null) {
 			dao.insert(dto);
-			return isInsert;
 		}
 		else {
-			
-			isInsert=false;
-			return isInsert;
+			dao.update(dto);
 		}
 		
 		
@@ -44,4 +40,10 @@ public class BasketServiceImpl implements BasketService{
 		mView.addObject("sum", sum);
 		mView.addObject("list", list);
 		return mView;
+	}
+
+	@Override
+	public void removeGoods(int item_num) {
+		dao.delete(item_num);
+		
 	}}

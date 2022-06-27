@@ -32,8 +32,7 @@ public class BasketController {
 	public ModelAndView authInsert(HttpSession session, ModelAndView mView, 
 			HttpServletRequest request, BasketDto dto) {
 		dto.setId((String)session.getAttribute("id"));
-		boolean isInsert = service.addGoods(dto);
-		mView.addObject("isInsert", isInsert);
+		service.addGoods(dto);
 		mView.setViewName("basket/insert");
 		return mView;
 	}
@@ -44,6 +43,13 @@ public class BasketController {
 		
 		service.getGoods(session, mView);
 		mView.setViewName("basket/basketList");
+		return mView;
+	}
+	
+	@RequestMapping("/basket/delete")
+	public ModelAndView delete(ModelAndView mView, HttpSession session, HttpServletRequest request) {
+		int item_num = Integer.parseInt(request.getParameter("item_num"));
+		service.removeGoods(item_num);
 		return mView;
 	}
 	

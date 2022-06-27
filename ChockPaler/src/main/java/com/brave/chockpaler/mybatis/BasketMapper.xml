@@ -19,9 +19,13 @@
 		SELECT * FROM basket
 		WHERE item_num = #{item_num}
 	</select>
-	<update id="update" parameterType="">
-		UPDATE FROM basket
-		SET count += 
+	<update id="update" parameterType="basketDto">
+		UPDATE basket
+		SET count = count + #{count}, price = price + #{price}
 		WHERE item_num = #{item_num}
 	</update>
+	<delete id="delete" parameterType="int">
+		DELETE FROM basket
+		WHERE item_num = #{item_num}
+	</delete>
 </mapper>

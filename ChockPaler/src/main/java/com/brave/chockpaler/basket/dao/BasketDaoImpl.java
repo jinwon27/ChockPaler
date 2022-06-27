@@ -32,6 +32,18 @@ public class BasketDaoImpl implements BasketDao{
 		return dto;
 	}
 
+	@Override
+	public void update(BasketDto dto) {
+		session.update("basket.update", dto);
+		
+	}
+
+	@Override
+	public void delete(int item_num) {
+		session.delete("basket.delete", item_num);
+		
+	}
+
 
 
 }

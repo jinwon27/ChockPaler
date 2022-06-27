@@ -9,6 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.brave.chockpaler.basket.dto.BasketDto;
 
 public interface BasketService {
-	public boolean addGoods(BasketDto dto);
+	public void addGoods(BasketDto dto);
 	public ModelAndView getGoods(HttpSession session, ModelAndView mView);
+	public void removeGoods(int item_num);
 }
