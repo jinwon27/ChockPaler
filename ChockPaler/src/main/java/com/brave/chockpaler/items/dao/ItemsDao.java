@@ -14,7 +14,7 @@ public interface ItemsDao {
 	
 	public List<ItemsDto> getList(Map<String, Object> map);
 	
-	public int getCount();
+	public int getCount(Map<String, Object> map);
 	
 	public int getSearchCount(Map<String, Object> map);
 	

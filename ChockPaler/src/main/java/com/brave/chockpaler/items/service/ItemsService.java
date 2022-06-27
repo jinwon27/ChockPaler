@@ -13,7 +13,7 @@ public interface ItemsService {
 	
 	public List<ItemsDto> getItemList(pageUtil util, String item_type);
 	
-	public int getItemCount();
+	public int getItemCount(String item_type);
 	
 	public int getSearchCount(String name);
 

@@ -41,9 +41,12 @@
 		</if>
 	</select>
 	
-	<select id="getItemCount" resultType="int">
+	<select id="getItemCount" resultType="int" parameterType="Map">
 		SELECT COUNT(*) FROM
 		items
+		<if test="item_type != ''">
+			WHERE item_type = #{item_type}
+		</if>
 	</select>
 	
 	<select id="getSearchCount" resultType="int" parameterType="Map">

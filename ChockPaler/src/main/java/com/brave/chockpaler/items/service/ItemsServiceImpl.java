@@ -39,8 +39,10 @@ public class ItemsServiceImpl implements ItemsService {
 	}
 
 	@Override
-	public int getItemCount() {
-		return dao.getCount();
+	public int getItemCount(String item_type) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("item_type", item_type);
+		return dao.getCount(map);
 	}
 
 	@Override

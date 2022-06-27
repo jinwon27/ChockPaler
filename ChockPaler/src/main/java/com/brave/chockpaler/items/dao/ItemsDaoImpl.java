@@ -28,8 +28,8 @@ public class ItemsDaoImpl implements ItemsDao {
 	}
 
 	@Override
-	public int getCount() {
-		return session.selectOne("Items.getItemCount");
+	public int getCount(Map<String, Object> map) {
+		return session.selectOne("Items.getItemCount", map);
 	}
 	
 	@Override

@@ -56,9 +56,9 @@
 			<li><a
 				href="${pageContext.request.contextPath}/home.do">BEST</a></li>
 			<li><a
-				href="${pageContext.request.contextPath}/home.do?item_type='cookie'">COOKIE</a></li>
+				href="${pageContext.request.contextPath}/home.do?item_type=cookie">COOKIE</a></li>
 			<li><a
-				href="${pageContext.request.contextPath}/home.do?item_type='beverage'">BEVERAGE</a></li>
+				href="${pageContext.request.contextPath}/home.do?item_type=beverage">BEVERAGE</a></li>
 			<li><a href="${pageContext.request.contextPath}/notice/list.do">NOTICE</a></li>
 			<li><a href="${pageContext.request.contextPath}">EVENT</a></li>
 			<li>

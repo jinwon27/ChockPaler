@@ -27,7 +27,7 @@ public class HomeController {
 						@RequestParam(defaultValue="") String item_type
 						) {
 		
-		pageUtil pUtil = new pageUtil(service.getItemCount(), curPage);
+		pageUtil pUtil = new pageUtil(service.getItemCount(item_type), curPage);
 		
 		request.setAttribute("startPageNum", pUtil.getPageBegin());
 		request.setAttribute("endPageNum", pUtil.getPageEnd());
