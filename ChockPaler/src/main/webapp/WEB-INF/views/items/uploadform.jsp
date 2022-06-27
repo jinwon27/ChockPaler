@@ -40,5 +40,7 @@
 			</form>
 		</div>
 	</div>
+   	<!-- 웹 하단부 info -->
+   	<%@include file="/WEB-INF/views/include/footer.jsp" %>
 </body>
 </html>

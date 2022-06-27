@@ -30,10 +30,10 @@
    <div class="d-flex flex-column flex-sm-row justify-content-center pb-1 mb-1">
    <ul class="list-unstyled d-flex text-center">
 		<li class="ms-3 text-center text-muted">&copy; 2022 Company. (주)ChockPaler</li>
-	   	<li class="ms-3 text-center text-muted">owner. 최광원</li>
-		<li class="ms-3 text-center text-muted">personal info manager. brave Team</li>
+	   	<li class="ms-3 text-center text-muted">owner. team BRAVE</li>
+		<li class="ms-3 text-center text-muted">personal info manager. team BRAVE</li>
 	   	<li class="ms-3 text-center text-muted">tel.8282-9292</li>
-	   	<li class="ms-3 text-center text-muted">mail order license. 2022 YeokSam-dong,GangNam-gu, Seoul<a class="link-secondary" href="#" >[사업자정보확인]</a></li>
+	   	<li class="ms-3 text-center text-muted">mail order license. 2022 YeokSam-dong, GangNam-gu, Seoul<a class="link-secondary" href="#" >[사업자정보확인]</a></li>
    </ul>   
    </div>
   </footer>
